@@ -108,3 +108,6 @@ D:\parth2015\training\MvcMovie\MvcMovie\bin\Microsoft.Owin.Security.MicrosoftAcc
 D:\parth2015\training\MvcMovie\MvcMovie\obj\Debug\MvcMovie.csprojResolveAssemblyReference.cache
 D:\parth2015\training\MvcMovie\MvcMovie\obj\Debug\MvcMovie.dll
 D:\parth2015\training\MvcMovie\MvcMovie\obj\Debug\MvcMovie.pdb
+D:\parth2015\training\MvcMovie\MvcMovie\obj\Debug\MvcMovie.Migrations.Initial.resources
+D:\parth2015\training\MvcMovie\MvcMovie\obj\Debug\MvcMovie.csproj.GenerateResource.Cache
+D:\parth2015\training\MvcMovie\MvcMovie\obj\Debug\MvcMovie.Migrations.Rating.resources
