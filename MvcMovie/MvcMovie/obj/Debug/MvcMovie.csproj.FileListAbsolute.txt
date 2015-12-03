@@ -111,3 +111,4 @@ D:\parth2015\training\MvcMovie\MvcMovie\obj\Debug\MvcMovie.pdb
 D:\parth2015\training\MvcMovie\MvcMovie\obj\Debug\MvcMovie.Migrations.Initial.resources
 D:\parth2015\training\MvcMovie\MvcMovie\obj\Debug\MvcMovie.csproj.GenerateResource.Cache
 D:\parth2015\training\MvcMovie\MvcMovie\obj\Debug\MvcMovie.Migrations.Rating.resources
+D:\parth2015\training\MvcMovie\MvcMovie\obj\Debug\MvcMovie.Migrations.DataAnnotations.resources
