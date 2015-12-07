@@ -28,3 +28,9 @@ D:\parth2015\training\MvcUniversity\MvcUniversity\bin\EntityFramework.dll
 D:\parth2015\training\MvcUniversity\MvcUniversity\bin\EntityFramework.SqlServer.dll
 D:\parth2015\training\MvcUniversity\MvcUniversity\bin\EntityFramework.xml
 D:\parth2015\training\MvcUniversity\MvcUniversity\bin\EntityFramework.SqlServer.xml
+D:\parth2015\training\MvcUniversity\MvcUniversity\bin\PagedList.dll
+D:\parth2015\training\MvcUniversity\MvcUniversity\bin\PagedList.Mvc.dll
+D:\parth2015\training\MvcUniversity\MvcUniversity\bin\PagedList.xml
+D:\parth2015\training\MvcUniversity\MvcUniversity\bin\PagedList.Mvc.xml
+D:\parth2015\training\MvcUniversity\MvcUniversity\obj\Debug\MvcUniversity.Migrations.InitialCreate.resources
+D:\parth2015\training\MvcUniversity\MvcUniversity\obj\Debug\MvcUniversity.csproj.GenerateResource.Cache
