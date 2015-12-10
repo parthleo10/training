@@ -61,16 +61,16 @@ namespace MvcUniversity.Migrations
             {
                 new Department { Name = "English",     Budget = 350000, 
                     StartDate = DateTime.Parse("2007-09-01"), 
-                    InstructorId  = instructors.Single( i => i.LastName == "Abercrombie").ID },
+                    InstructorId  = instructors.Single( i => i.LastName == "Abercrombie").Id },
                 new Department { Name = "Mathematics", Budget = 100000, 
                     StartDate = DateTime.Parse("2007-09-01"), 
-                    InstructorId  = instructors.Single( i => i.LastName == "Fakhouri").ID },
+                    InstructorId  = instructors.Single( i => i.LastName == "Fakhouri").Id },
                 new Department { Name = "Engineering", Budget = 350000, 
                     StartDate = DateTime.Parse("2007-09-01"), 
-                    InstructorId  = instructors.Single( i => i.LastName == "Harui").ID },
+                    InstructorId  = instructors.Single( i => i.LastName == "Harui").Id },
                 new Department { Name = "Economics",   Budget = 100000, 
                     StartDate = DateTime.Parse("2007-09-01"), 
-                    InstructorId  = instructors.Single( i => i.LastName == "Kapoor").ID }
+                    InstructorId  = instructors.Single( i => i.LastName == "Kapoor").Id }
             };
             departments.ForEach(s => context.Departments.AddOrUpdate(p => p.Name, s));
             context.SaveChanges();
@@ -112,13 +112,13 @@ namespace MvcUniversity.Migrations
             var officeAssignments = new List<OfficeAssignment>
             {
                 new OfficeAssignment { 
-                    InstructorId = instructors.Single( i => i.LastName == "Fakhouri").ID, 
+                    InstructorId = instructors.Single( i => i.LastName == "Fakhouri").Id, 
                     Location = "Smith 17" },
                 new OfficeAssignment { 
-                    InstructorId = instructors.Single( i => i.LastName == "Harui").ID, 
+                    InstructorId = instructors.Single( i => i.LastName == "Harui").Id, 
                     Location = "Gowan 27" },
                 new OfficeAssignment { 
-                    InstructorId = instructors.Single( i => i.LastName == "Kapoor").ID, 
+                    InstructorId = instructors.Single( i => i.LastName == "Kapoor").Id, 
                     Location = "Thompson 304" },
             };
             officeAssignments.ForEach(s => context.OfficeAssignments.AddOrUpdate(p => p.InstructorId, s));

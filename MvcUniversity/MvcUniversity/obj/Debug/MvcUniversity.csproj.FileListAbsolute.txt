@@ -39,3 +39,4 @@ D:\parth2015\training\MvcUniversity\MvcUniversity\obj\Debug\MvcUniversity.Migrat
 D:\parth2015\training\MvcUniversity\MvcUniversity\obj\Debug\MvcUniversity.Migrations.ComplexDataModel.resources
 D:\parth2015\training\MvcUniversity\MvcUniversity\obj\Debug\MvcUniversity.Migrations.DepartmentSP.resources
 D:\parth2015\training\MvcUniversity\MvcUniversity\obj\Debug\MvcUniversity.Migrations.RowVersion.resources
+D:\parth2015\training\MvcUniversity\MvcUniversity\obj\Debug\MvcUniversity.Migrations.Inheritance.resources

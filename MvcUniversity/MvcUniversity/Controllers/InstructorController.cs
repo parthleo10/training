@@ -30,7 +30,7 @@ namespace MvcUniversity.Controllers
             {
                 ViewBag.InstructorID = id.Value;
                 viewModel.Courses = viewModel.Instructors.Where(
-                    i => i.ID == id.Value).Single().Courses;
+                    i => i.Id == id.Value).Single().Courses;
             }
 
             if (courseId != null)
@@ -104,7 +104,7 @@ namespace MvcUniversity.Controllers
             Instructor instructor = db.Instructors
          .Include(i => i.OfficeAssignment)
          .Include(i => i.Courses)
-         .Where(i => i.ID == id)
+         .Where(i => i.Id == id)
          .Single();
 
            PopulateAssignedCourseData(instructor);
@@ -148,7 +148,7 @@ namespace MvcUniversity.Controllers
             var instructorToUpdate = db.Instructors
                .Include(i => i.OfficeAssignment)
                .Include(i => i.Courses)
-               .Where(i => i.ID == id)
+               .Where(i => i.Id == id)
                .Single();
 
             if (TryUpdateModel(instructorToUpdate, "",
@@ -229,7 +229,7 @@ namespace MvcUniversity.Controllers
         {
             Instructor instructor = db.Instructors
       .Include(i => i.OfficeAssignment)
-      .Where(i => i.ID == id)
+      .Where(i => i.Id == id)
       .Single();
 
             db.Instructors.Remove(instructor);
