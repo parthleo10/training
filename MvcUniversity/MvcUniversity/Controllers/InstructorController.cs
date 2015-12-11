@@ -31,6 +31,7 @@ namespace MvcUniversity.Controllers
                 ViewBag.InstructorID = id.Value;
                 viewModel.Courses = viewModel.Instructors.Where(
                     i => i.Id == id.Value).Single().Courses;
+
             }
 
             if (courseId != null)

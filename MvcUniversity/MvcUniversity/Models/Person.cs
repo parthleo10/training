@@ -22,7 +22,7 @@ namespace MvcUniversity.Models
         {
             get
             {
-                return LastName + ", " + FirstMidName;
+                return LastName + " " + FirstMidName;
             }
         }
     }
