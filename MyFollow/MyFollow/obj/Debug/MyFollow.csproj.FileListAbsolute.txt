@@ -55,3 +55,4 @@ D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.dll
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.pdb
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.Migrations.InitialCreate.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.csproj.GenerateResource.Cache
+D:\parth2015\training\MyFollow\MyFollow\bin\Owin.Security.Providers.dll

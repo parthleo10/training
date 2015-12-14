@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using MyFollow.Models;
+using Owin.Security.Providers.LinkedIn;
 
 namespace MyFollow
 {
@@ -53,6 +54,10 @@ namespace MyFollow
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
+
+            app.UseLinkedInAuthentication(
+    clientId: "75cef95no5t83g",
+    clientSecret: "0Fu2WMHPBlaBzELx");
 
             app.UseFacebookAuthentication(
                appId: "436983913165122",
