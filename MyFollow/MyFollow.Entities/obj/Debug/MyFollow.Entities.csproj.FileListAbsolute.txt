@@ -1,0 +1,13 @@
+D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\MyFollow.Entities.dll
+D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\MyFollow.Entities.pdb
+D:\parth2015\training\MyFollow\MyFollow.Entities\obj\Debug\MyFollow.Entities.dll
+D:\parth2015\training\MyFollow\MyFollow.Entities\obj\Debug\MyFollow.Entities.pdb
+D:\parth2015\training\MyFollow\MyFollow.Entities\obj\Debug\MyFollow.Entities.csprojResolveAssemblyReference.cache
+D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\EntityFramework.dll
+D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\EntityFramework.xml
+D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\EntityFramework.SqlServer.xml
+D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

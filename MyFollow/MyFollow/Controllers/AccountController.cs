@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using MyFollow.DAL;
 using MyFollow.Models;
 
 namespace MyFollow.Controllers
@@ -144,7 +145,7 @@ namespace MyFollow.Controllers
         {
             return View();
         }
-
+         
         //
         // POST: /Account/Register
         [HttpPost]
@@ -370,7 +371,7 @@ namespace MyFollow.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, CompanyName = model.CompanyName};
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

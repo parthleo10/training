@@ -1,12 +1,15 @@
 ﻿using System;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
+using MyFollow.DAL;
 using Owin;
 using MyFollow.Models;
 using Owin.Security.Providers.LinkedIn;
+using Microsoft.Owin.Security.Twitter;
 
 namespace MyFollow
 {
@@ -16,7 +19,7 @@ namespace MyFollow
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
+            app.CreatePerOwinContext(IdentityDb.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
 
@@ -51,9 +54,9 @@ namespace MyFollow
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+            app.UseTwitterAuthentication(
+               consumerKey: "QJR4doYml9NiHcz6fkvQzQ4VK",
+               consumerSecret: "atx0hawYQN6U8fjF7hoN2ebaNaFU4yT6OmSHZKsY04tmb3ddDF");
 
             app.UseLinkedInAuthentication(
     clientId: "75cef95no5t83g",

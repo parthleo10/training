@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using MyFollow.Models;
+using System.Linq;
+using System.Web;
+using MyFollow.Entities;
 
 namespace MyFollow.DAL
 {
-    public class FollowContext : DbContext
+     public class FollowContext : DbContext
     {
             public FollowContext()
-            : base("FollowContext")
+            : base("DefaultConnection")
             {
             }
 
@@ -23,5 +23,4 @@ namespace MyFollow.DAL
                 modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             }
         }
-    
-    }
+}

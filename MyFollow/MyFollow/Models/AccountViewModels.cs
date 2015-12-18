@@ -8,6 +8,11 @@ namespace MyFollow.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Company Name")]
+        public string CompanyName { get; set; }
+    
     }
 
     public class ExternalLoginListViewModel
