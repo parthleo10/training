@@ -155,7 +155,22 @@ namespace MyFollow.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { OwnerName = model.OwnerName, 
+                                                 Email = model.Email,
+                                                 CompanyName = model.CompanyName,
+                                                 Description = model.Description,
+                                                 DateOfJoining = model.DateOfJoining,
+                                                 FoundedIn = model.FoundedIn,
+                                                 Street1 = model.Street1,
+                                                 Street2 = model.Street2,
+                                                 City = model.City,
+                                                 State = model.State,
+                                                 Country = model.Country,
+                                                 Pin = model.Pin,
+                                                 PhoneNumber = model.PhoneNumber,
+                                                 WebsiteUrl = model.WebsiteUrl,
+                                                 TwitterHandler = model.TwitterHandler,
+                                                 FacebookPageUrl = model.FacebookPageUrl };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -371,7 +386,18 @@ namespace MyFollow.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, CompanyName = model.CompanyName};
+                var user = new ApplicationUser { UserName = model.UserName,
+                                                 Email = model.Email, 
+                                                 DateOfJoining = model.DateOfJoining,
+                                                 Gender = model.Gender,
+                                                 DateOfBirth = model.DateOfBirth,
+                                                 Street1 = model.Street1,
+                                                 Street2 = model.Street2,
+                                                 City = model.City,
+                                                 State = model.State,
+                                                 Country = model.Country,
+                                                 Pin = model.Pin,
+                                                 PhoneNumber = model.PhoneNumber};
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

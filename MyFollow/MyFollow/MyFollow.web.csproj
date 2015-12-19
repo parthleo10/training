@@ -181,11 +181,15 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\FollowContext.cs" />
     <Compile Include="DAL\IdentityDb.cs" />
-    <Compile Include="DAL\IdentityMigrations\201512181318274_InitialCreate.cs" />
-    <Compile Include="DAL\IdentityMigrations\201512181318274_InitialCreate.Designer.cs">
-      <DependentUpon>201512181318274_InitialCreate.cs</DependentUpon>
+    <Compile Include="DAL\IdentityMigrations\201512191103585_InitialCreate.cs" />
+    <Compile Include="DAL\IdentityMigrations\201512191103585_InitialCreate.Designer.cs">
+      <DependentUpon>201512191103585_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\IdentityMigrations\Configuration.cs" />
+    <Compile Include="DAL\MyFollowMigrations\201512191121042_InitialCreate.cs" />
+    <Compile Include="DAL\MyFollowMigrations\201512191121042_InitialCreate.Designer.cs">
+      <DependentUpon>201512191121042_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\MyFollowMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -285,8 +289,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201512181318274_InitialCreate.resx">
-      <DependentUpon>201512181318274_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201512191103585_InitialCreate.resx">
+      <DependentUpon>201512191103585_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\MyFollowMigrations\201512191121042_InitialCreate.resx">
+      <DependentUpon>201512191121042_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

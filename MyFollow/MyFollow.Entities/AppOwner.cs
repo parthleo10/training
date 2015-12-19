@@ -21,7 +21,8 @@ namespace MyFollow.Entities
         [Required]
         [Display(Name = "Company Name")]
         public string CompanyName { get; set; }
-
+        
+        [StringLength(100)]
         public string Desription { get; set; }
 
         [DataType(DataType.Date)]

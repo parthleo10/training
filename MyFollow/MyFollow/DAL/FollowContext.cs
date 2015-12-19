@@ -17,6 +17,7 @@ namespace MyFollow.DAL
 
             public DbSet<AppOwner> AppOwners { get; set; }
             public DbSet<EndUser> EndUsers { get; set; }
+            public DbSet<Invitation> Invitations { get; set; }
 
             protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {
