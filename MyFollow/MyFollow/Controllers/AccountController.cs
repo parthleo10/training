@@ -387,7 +387,7 @@ namespace MyFollow.Controllers
                     return View("ExternalLoginFailure");
                 }
                 var user = new ApplicationUser { UserName = model.UserName,
-                                                 Email = model.Email, 
+                                                 Email = model.Email,
                                                  DateOfJoining = model.DateOfJoining,
                                                  Gender = model.Gender,
                                                  DateOfBirth = model.DateOfBirth,
@@ -397,7 +397,8 @@ namespace MyFollow.Controllers
                                                  State = model.State,
                                                  Country = model.Country,
                                                  Pin = model.Pin,
-                                                 PhoneNumber = model.PhoneNumber};
+                                                 PhoneNumber = model.PhoneNumber
+                                                 };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

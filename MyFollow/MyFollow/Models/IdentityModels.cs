@@ -11,14 +11,16 @@ namespace MyFollow.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+
         [Required]
         [Display(Name = "Owner Name")]
         public string OwnerName { get; set; }
-
+        
+        [Required]
         [Display(Name = "Company Name")]
         public string CompanyName { get; set; }
 
-        [StringLength(100)]
+       
         public string Description { get; set; }
 
         [DataType(DataType.Date)]

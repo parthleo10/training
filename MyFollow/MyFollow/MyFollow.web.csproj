@@ -179,16 +179,25 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="DAL\FollowContext.cs" />
     <Compile Include="DAL\IdentityDb.cs" />
     <Compile Include="DAL\IdentityMigrations\201512191103585_InitialCreate.cs" />
     <Compile Include="DAL\IdentityMigrations\201512191103585_InitialCreate.Designer.cs">
       <DependentUpon>201512191103585_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\IdentityMigrations\201512220847440_datetime.cs" />
+    <Compile Include="DAL\IdentityMigrations\201512220847440_datetime.Designer.cs">
+      <DependentUpon>201512220847440_datetime.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\IdentityMigrations\Configuration.cs" />
     <Compile Include="DAL\MyFollowMigrations\201512191121042_InitialCreate.cs" />
     <Compile Include="DAL\MyFollowMigrations\201512191121042_InitialCreate.Designer.cs">
       <DependentUpon>201512191121042_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\MyFollowMigrations\201512220643303_Product.cs" />
+    <Compile Include="DAL\MyFollowMigrations\201512220643303_Product.Designer.cs">
+      <DependentUpon>201512220643303_Product.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\MyFollowMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
@@ -274,6 +283,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -292,8 +306,14 @@
     <EmbeddedResource Include="DAL\IdentityMigrations\201512191103585_InitialCreate.resx">
       <DependentUpon>201512191103585_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201512220847440_datetime.resx">
+      <DependentUpon>201512220847440_datetime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DAL\MyFollowMigrations\201512191121042_InitialCreate.resx">
       <DependentUpon>201512191121042_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\MyFollowMigrations\201512220643303_Product.resx">
+      <DependentUpon>201512220643303_Product.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

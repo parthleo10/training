@@ -55,6 +55,7 @@
     <Compile Include="AppOwner.cs" />
     <Compile Include="EndUser.cs" />
     <Compile Include="Invitation.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
