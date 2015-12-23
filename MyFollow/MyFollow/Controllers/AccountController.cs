@@ -155,8 +155,11 @@ namespace MyFollow.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { OwnerName = model.OwnerName, 
-                                                 Email = model.Email,
+                var user = new ApplicationUser { UserName = model.OwnerName,Email = model.EmailId,
+                                                 Owner = new Owner
+                                                 {
+                                                 OwnerName = model.OwnerName,
+                                                 EmailId = model.EmailId,
                                                  CompanyName = model.CompanyName,
                                                  Description = model.Description,
                                                  DateOfJoining = model.DateOfJoining,
@@ -170,7 +173,7 @@ namespace MyFollow.Controllers
                                                  PhoneNumber = model.PhoneNumber,
                                                  WebsiteUrl = model.WebsiteUrl,
                                                  TwitterHandler = model.TwitterHandler,
-                                                 FacebookPageUrl = model.FacebookPageUrl };
+                                                 FacebookPageUrl = model.FacebookPageUrl }};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -362,7 +365,7 @@ namespace MyFollow.Controllers
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { EmailId = loginInfo.Email });
             }
         }
 
@@ -386,19 +389,26 @@ namespace MyFollow.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.UserName,
-                                                 Email = model.Email,
-                                                 DateOfJoining = model.DateOfJoining,
-                                                 Gender = model.Gender,
-                                                 DateOfBirth = model.DateOfBirth,
-                                                 Street1 = model.Street1,
-                                                 Street2 = model.Street2,
-                                                 City = model.City,
-                                                 State = model.State,
-                                                 Country = model.Country,
-                                                 Pin = model.Pin,
-                                                 PhoneNumber = model.PhoneNumber
-                                                 };
+                var user = new ApplicationUser
+                {
+                    UserName = model.UserName,
+                    Email = model.EmailId,
+                    User = new User
+                    {
+                        UserName = model.UserName,
+                        EmailId = model.EmailId,
+                        DateOfJoining = model.DateOfJoining,
+                        Gender = model.Gender,
+                        DateOfBirth = model.DateOfBirth,
+                        Street1 = model.Street1,
+                        Street2 = model.Street2,
+                        City = model.City,
+                        State = model.State,
+                        Country = model.Country,
+                        Pin = model.Pin,
+                        PhoneNumber = model.PhoneNumber
+                    }
+                };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

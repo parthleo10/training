@@ -61,3 +61,5 @@ D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.web.csproj.GenerateRe
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.MyFollowMigrations.InitialCreate.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.MyFollowMigrations.Product.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.datetime.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.ownertable.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.usertable.resources

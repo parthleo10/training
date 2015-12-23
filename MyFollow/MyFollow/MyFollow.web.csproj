@@ -190,6 +190,14 @@
     <Compile Include="DAL\IdentityMigrations\201512220847440_datetime.Designer.cs">
       <DependentUpon>201512220847440_datetime.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\IdentityMigrations\201512230843345_owner table.cs" />
+    <Compile Include="DAL\IdentityMigrations\201512230843345_owner table.Designer.cs">
+      <DependentUpon>201512230843345_owner table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\IdentityMigrations\201512230914321_user table.cs" />
+    <Compile Include="DAL\IdentityMigrations\201512230914321_user table.Designer.cs">
+      <DependentUpon>201512230914321_user table.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\IdentityMigrations\Configuration.cs" />
     <Compile Include="DAL\MyFollowMigrations\201512191121042_InitialCreate.cs" />
     <Compile Include="DAL\MyFollowMigrations\201512191121042_InitialCreate.Designer.cs">
@@ -308,6 +316,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DAL\IdentityMigrations\201512220847440_datetime.resx">
       <DependentUpon>201512220847440_datetime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201512230843345_owner table.resx">
+      <DependentUpon>201512230843345_owner table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201512230914321_user table.resx">
+      <DependentUpon>201512230914321_user table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DAL\MyFollowMigrations\201512191121042_InitialCreate.resx">
       <DependentUpon>201512191121042_InitialCreate.cs</DependentUpon>
