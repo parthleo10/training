@@ -15,8 +15,6 @@ namespace MyFollow.DAL
         }
         public System.Data.Entity.DbSet<Owner> Owner { get; set; }
 
-        public System.Data.Entity.DbSet<User> User { get; set; }
-
         public static IdentityDb Create()
         {
             return new IdentityDb();

@@ -181,27 +181,10 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="DAL\FollowContext.cs" />
-    <Compile Include="DAL\FollowMigrations\201512240908416_Initial Create.cs" />
-    <Compile Include="DAL\FollowMigrations\201512240908416_Initial Create.Designer.cs">
-      <DependentUpon>201512240908416_Initial Create.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\FollowMigrations\Configuration.cs" />
     <Compile Include="DAL\IdentityDb.cs" />
-    <Compile Include="DAL\IdentityMigrations\201512240907571_Initial Create.cs" />
-    <Compile Include="DAL\IdentityMigrations\201512240907571_Initial Create.Designer.cs">
-      <DependentUpon>201512240907571_Initial Create.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\IdentityMigrations\201512240957051_Initial pa.cs" />
-    <Compile Include="DAL\IdentityMigrations\201512240957051_Initial pa.Designer.cs">
-      <DependentUpon>201512240957051_Initial pa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\IdentityMigrations\201512241014421_Initial pa1.cs" />
-    <Compile Include="DAL\IdentityMigrations\201512241014421_Initial pa1.Designer.cs">
-      <DependentUpon>201512241014421_Initial pa1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\IdentityMigrations\201512241037523_Initial pa2.cs" />
-    <Compile Include="DAL\IdentityMigrations\201512241037523_Initial pa2.Designer.cs">
-      <DependentUpon>201512241037523_Initial pa2.cs</DependentUpon>
+    <Compile Include="DAL\IdentityMigrations\201512241326122_Initial table emails.cs" />
+    <Compile Include="DAL\IdentityMigrations\201512241326122_Initial table emails.Designer.cs">
+      <DependentUpon>201512241326122_Initial table emails.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\IdentityMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
@@ -307,20 +290,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DAL\FollowMigrations\201512240908416_Initial Create.resx">
-      <DependentUpon>201512240908416_Initial Create.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201512240907571_Initial Create.resx">
-      <DependentUpon>201512240907571_Initial Create.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201512240957051_Initial pa.resx">
-      <DependentUpon>201512240957051_Initial pa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201512241014421_Initial pa1.resx">
-      <DependentUpon>201512241014421_Initial pa1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201512241037523_Initial pa2.resx">
-      <DependentUpon>201512241037523_Initial pa2.cs</DependentUpon>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201512241326122_Initial table emails.resx">
+      <DependentUpon>201512241326122_Initial table emails.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
