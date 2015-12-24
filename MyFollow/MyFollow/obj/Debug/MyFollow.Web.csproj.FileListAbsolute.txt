@@ -58,8 +58,7 @@ D:\parth2015\training\MyFollow\MyFollow\bin\MyFollow.Entities.dll
 D:\parth2015\training\MyFollow\MyFollow\bin\MyFollow.Entities.pdb
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.InitialCreate.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.web.csproj.GenerateResource.Cache
-D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.MyFollowMigrations.InitialCreate.resources
-D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.MyFollowMigrations.Product.resources
-D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.datetime.resources
-D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.ownertable.resources
-D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.usertable.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.FollowMigrations.InitialCreate.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.Initialpa.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.Initialpa1.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.Initialpa2.resources

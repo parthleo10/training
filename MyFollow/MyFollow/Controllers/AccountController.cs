@@ -74,7 +74,7 @@ namespace MyFollow.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Passwordo, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -155,11 +155,12 @@ namespace MyFollow.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.OwnerName,Email = model.EmailId,
+                var user = new ApplicationUser { UserName = model.OwnerName,Email = model.Email,
                                                  Owner = new Owner
                                                  {
                                                  OwnerName = model.OwnerName,
-                                                 EmailId = model.EmailId,
+                                                 Email = model.Email,
+                                                 Passwordo = model.Passwordo,
                                                  CompanyName = model.CompanyName,
                                                  Description = model.Description,
                                                  DateOfJoining = model.DateOfJoining,
@@ -174,7 +175,7 @@ namespace MyFollow.Controllers
                                                  WebsiteUrl = model.WebsiteUrl,
                                                  TwitterHandler = model.TwitterHandler,
                                                  FacebookPageUrl = model.FacebookPageUrl }};
-                var result = await UserManager.CreateAsync(user, model.Password);
+                var result = await UserManager.CreateAsync(user, model.Passwordo);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
@@ -365,7 +366,7 @@ namespace MyFollow.Controllers
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { EmailId = loginInfo.Email });
+                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
         }
 
@@ -392,11 +393,11 @@ namespace MyFollow.Controllers
                 var user = new ApplicationUser
                 {
                     UserName = model.UserName,
-                    Email = model.EmailId,
+                    Email = model.Email,
                     User = new User
                     {
                         UserName = model.UserName,
-                        EmailId = model.EmailId,
+                        Email = model.Email,
                         DateOfJoining = model.DateOfJoining,
                         Gender = model.Gender,
                         DateOfBirth = model.DateOfBirth,

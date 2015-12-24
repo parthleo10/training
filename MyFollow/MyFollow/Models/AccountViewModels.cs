@@ -13,7 +13,7 @@ namespace MyFollow.Models
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
-        public string EmailId { get; set; }
+        public string Email { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -93,7 +93,7 @@ namespace MyFollow.Models
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
-        public string Password { get; set; }
+        public string Passwordo { get; set; }
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
@@ -108,18 +108,13 @@ namespace MyFollow.Models
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
-        public string EmailId { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
-        public string Password { get; set; }
-
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
+        public string Passwordo { get; set; }
 
         [Required]
         [Display(Name = "Company Name")]

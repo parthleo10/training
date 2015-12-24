@@ -29,15 +29,20 @@ namespace MyFollow.Models
         public int Id { get; set; }
 
         [Display(Name = "Owner Name")]
-        [Required]
+        
         public string OwnerName { get; set; }
 
-        [Required]
+        
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
-        public string EmailId { get; set; }
+        public string Email { get; set; }
 
-        [Required]
+        
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Passwordo { get; set; }
+
+       
         [Display(Name = "Company Name")]
         public string CompanyName { get; set; }
 
@@ -95,7 +100,7 @@ namespace MyFollow.Models
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
-        public string EmailId { get; set; }
+        public string Email { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
