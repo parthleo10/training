@@ -182,9 +182,17 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="DAL\FollowContext.cs" />
     <Compile Include="DAL\IdentityDb.cs" />
-    <Compile Include="DAL\IdentityMigrations\201512241326122_Initial table emails.cs" />
-    <Compile Include="DAL\IdentityMigrations\201512241326122_Initial table emails.Designer.cs">
-      <DependentUpon>201512241326122_Initial table emails.cs</DependentUpon>
+    <Compile Include="DAL\IdentityMigrations\201512250742003_Initial Create10.cs" />
+    <Compile Include="DAL\IdentityMigrations\201512250742003_Initial Create10.Designer.cs">
+      <DependentUpon>201512250742003_Initial Create10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\IdentityMigrations\201512250959248_Initial Create11.cs" />
+    <Compile Include="DAL\IdentityMigrations\201512250959248_Initial Create11.Designer.cs">
+      <DependentUpon>201512250959248_Initial Create11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\IdentityMigrations\201512251312564_Initial Create12.cs" />
+    <Compile Include="DAL\IdentityMigrations\201512251312564_Initial Create12.Designer.cs">
+      <DependentUpon>201512251312564_Initial Create12.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\IdentityMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
@@ -256,7 +264,6 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -275,6 +282,9 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Invite.cshtml" />
+    <Content Include="Views\Account\_Invite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,8 +300,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201512241326122_Initial table emails.resx">
-      <DependentUpon>201512241326122_Initial table emails.cs</DependentUpon>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201512250742003_Initial Create10.resx">
+      <DependentUpon>201512250742003_Initial Create10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201512250959248_Initial Create11.resx">
+      <DependentUpon>201512250959248_Initial Create11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201512251312564_Initial Create12.resx">
+      <DependentUpon>201512251312564_Initial Create12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

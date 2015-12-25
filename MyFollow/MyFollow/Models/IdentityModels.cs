@@ -15,8 +15,15 @@ namespace MyFollow.Models
     {
 
         public virtual Owner Owner { get; set; }
-       
 
+        public virtual EndUser EndUser { get; set; }
+
+        public virtual Invitation Invitation { get; set; }
+
+        [Display(Name = "Owner Name")]
+        public string OwnerName { get; set; }
+
+       
       
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -28,19 +35,93 @@ namespace MyFollow.Models
         }
     }
 
+    public class Invitation
+    {
+
+        public int Id { get; set; }
+
+        [Required]
+        [Display(Name = "Owner Name")]
+        public string OwnName { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Company Name")]
+        public string CompanyName { get; set; }
+
+    }
+
     public class Owner
     {
+        
         public int Id { get; set; }
 
         [Required]
         [Display(Name = "Owner Name")]
 
         public string OwnerName { get; set; }
+        
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
 
+        [Required]
+        [Display(Name = "Company Name")]
+        public string CompanyName { get; set; }
 
     }
 
+    public class EndUser
+    {
+        
+        public int Id { get; set; }
 
+        [Required]
+        [Display(Name = "User Name")]
+
+        public string EndUserName { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date Of Joining")]
+        public DateTime? DateOfJoining { get; set; }
+
+        public string Gender { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date Of Birth")]
+        public DateTime? DateOfBirth { get; set; }
+
+        [Display(Name = "Street 1")]
+        public string Street1 { get; set; }
+
+        [Display(Name = "Street 2")]
+        public string Street2 { get; set; }
+
+        public string City { get; set; }
+
+        public string State { get; set; }
+
+        public string Country { get; set; }
+
+        public string Pin { get; set; }
+
+        [Display(Name = "Contact Number")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
+        public string ContactNumber { get; set; }
+
+    }
 
    
 }

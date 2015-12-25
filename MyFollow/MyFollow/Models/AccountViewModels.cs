@@ -8,7 +8,7 @@ namespace MyFollow.Models
     {
         [Required]
         [Display(Name = "User Name")]
-        public string UserName { get; set; }
+        public string EndUserName { get; set; }
 
         [Required]
         [EmailAddress]
@@ -41,9 +41,9 @@ namespace MyFollow.Models
 
         public string Pin { get; set; }
 
-        [Display(Name = "Phone Number")]
+        [Display(Name = "Contact Number")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
-        public string PhoneNumber { get; set; }
+        public string ContactNumber { get; set; }
  
     }
 
@@ -85,11 +85,11 @@ namespace MyFollow.Models
 
     public class LoginViewModel
     {
-        [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
 
+        [Required]
+        [Display(Name = "Owner Name")]
+        public string OwnerName { get; set; } //OwnName is prop of invite table
+        
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
@@ -97,11 +97,35 @@ namespace MyFollow.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+       
+    }
+
+    public class InviteViewModel
+    {
+        public string ReturnUrl { get; set; }
+        [Required]
+        [Display(Name = "Owner Name")]
+        public string OwnName { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Company Name")]
+        public string CompanyName { get; set; }
     }
 
     public class RegisterViewModel
     {
-       
+
+        [Required]
+        [Display(Name = "Owner Name")]
+
+        public string OwnerName { get; set; }
+        
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
@@ -112,12 +136,16 @@ namespace MyFollow.Models
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
+
+        [Required]
+        [Display(Name = "Company Name")]
+        public string CompanyName { get; set; }
     }
 
     public class ResetPasswordViewModel
     {
         [Required]
-        [EmailAddress]
+        [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
         public string Email { get; set; }
 

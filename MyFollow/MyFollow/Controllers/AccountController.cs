@@ -74,7 +74,7 @@ namespace MyFollow.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.OwnerName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -89,6 +89,56 @@ namespace MyFollow.Controllers
                     return View(model);
             }
         }
+        // GET: /Account/Login
+        [AllowAnonymous]
+        public ActionResult Invite()
+        {
+           
+            return View();
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Invite(InviteViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser
+                {
+                    OwnerName = model.OwnName,
+                    UserName = model.OwnName,
+                    Email = model.Email,
+
+                    Invitation = new Invitation
+                    {
+                        OwnName = model.OwnName,
+                        Email = model.Email,
+                        CompanyName = model.CompanyName
+                    }
+
+                };
+
+                var result = await UserManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                   // await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                    // Send an email with this link
+                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                    return RedirectToAction("Index", "Home");
+
+                }
+                AddErrors(result);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
 
         //
         // GET: /Account/VerifyCode
@@ -157,9 +207,14 @@ namespace MyFollow.Controllers
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.Email,
+                    OwnerName = model.OwnerName,
+                    UserName = model.OwnerName,
                     Email = model.Email,
                    
+                  Owner = new Owner { 
+                        Email = model.Email,
+                        OwnerName = model.OwnerName,
+                        CompanyName = model.CompanyName}
                    
                 };
 
@@ -380,8 +435,13 @@ namespace MyFollow.Controllers
                 }
                 var user = new ApplicationUser
                 {
-                    UserName = model.UserName,
+                    UserName = model.EndUserName,
                     Email = model.Email,
+                    EndUser = new EndUser
+                    {
+                        EndUserName = model.EndUserName,
+                        Email = model.Email
+                    }
                    
                 };
                 var result = await UserManager.CreateAsync(user);
