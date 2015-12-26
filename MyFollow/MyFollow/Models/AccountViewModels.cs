@@ -88,7 +88,7 @@ namespace MyFollow.Models
 
         [Required]
         [Display(Name = "Owner Name")]
-        public string OwnerName { get; set; } //OwnName is prop of invite table
+        public string OwnerName { get; set; }
         
         [Required]
         [DataType(DataType.Password)]
@@ -104,9 +104,10 @@ namespace MyFollow.Models
     public class InviteViewModel
     {
         public string ReturnUrl { get; set; }
+
         [Required]
         [Display(Name = "Owner Name")]
-        public string OwnName { get; set; }
+        public string OwnName { get; set; } //OwnName is prop of invite table
 
         [Required]
         [DataType(DataType.EmailAddress)]
