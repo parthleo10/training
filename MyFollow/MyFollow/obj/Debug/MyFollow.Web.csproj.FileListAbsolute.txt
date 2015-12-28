@@ -56,7 +56,10 @@ D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.pdb
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.web.csprojResolveAssemblyReference.cache
 D:\parth2015\training\MyFollow\MyFollow\bin\MyFollow.Entities.dll
 D:\parth2015\training\MyFollow\MyFollow\bin\MyFollow.Entities.pdb
-D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.InitialCreate10.resources
+D:\parth2015\training\MyFollow\MyFollow\bin\SendGrid.dll
+D:\parth2015\training\MyFollow\MyFollow\bin\SendGrid.SmtpApi.dll
+D:\parth2015\training\MyFollow\MyFollow\bin\SendGridMail.dll
+D:\parth2015\training\MyFollow\MyFollow\bin\System.Net.Http.Formatting.dll
+D:\parth2015\training\MyFollow\MyFollow\bin\System.Net.Http.Formatting.xml
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.emailnullable.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.web.csproj.GenerateResource.Cache
-D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.InitialCreate11.resources
-D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.InitialCreate12.resources

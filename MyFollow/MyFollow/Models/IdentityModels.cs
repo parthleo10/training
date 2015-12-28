@@ -23,8 +23,7 @@ namespace MyFollow.Models
         [Display(Name = "Owner Name")]
         public string OwnerName { get; set; }
 
-       
-      
+
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -42,7 +41,7 @@ namespace MyFollow.Models
 
         [Required]
         [Display(Name = "Owner Name")]
-        public string OwnName { get; set; }
+        public string InviteOwnerName { get; set; }
 
         [Required]
         [DataType(DataType.EmailAddress)]
@@ -53,6 +52,7 @@ namespace MyFollow.Models
         [Display(Name = "Company Name")]
         public string CompanyName { get; set; }
 
+        
     }
 
     public class Owner
@@ -62,7 +62,6 @@ namespace MyFollow.Models
 
         [Required]
         [Display(Name = "Owner Name")]
-
         public string OwnerName { get; set; }
         
         [Required]
@@ -73,6 +72,8 @@ namespace MyFollow.Models
         [Required]
         [Display(Name = "Company Name")]
         public string CompanyName { get; set; }
+
+       
 
     }
 

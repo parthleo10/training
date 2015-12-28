@@ -107,7 +107,7 @@ namespace MyFollow.Models
 
         [Required]
         [Display(Name = "Owner Name")]
-        public string OwnName { get; set; } //OwnName is prop of invite table
+        public string InviteOwnerName { get; set; } 
 
         [Required]
         [DataType(DataType.EmailAddress)]

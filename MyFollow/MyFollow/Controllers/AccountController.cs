@@ -103,33 +103,44 @@ namespace MyFollow.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser
-                {
-                    OwnerName = model.OwnName,
-                    UserName = model.OwnName,
+
+                var user = new ApplicationUser {
+
+                    UserName = model.Email,
                     Email = model.Email,
-
+                   
                     Invitation = new Invitation
-                    {
-                        OwnName = model.OwnName,
-                        Email = model.Email,
-                        CompanyName = model.CompanyName
-                    }
+                {
+                    InviteOwnerName  = model.InviteOwnerName,
+                    Email = model.Email,
+                    CompanyName = model.CompanyName
+                }
+            };
+           
 
-                };
 
-                var result = await UserManager.CreateAsync(user);
+
+            var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    //  Comment the following line to prevent log in until the user is confirmed.
+                    //  await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                     await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                     // Uncomment to debug locally 
+                     // TempData["ViewBagLink"] = callbackUrl;
+
+                     ViewBag.Message = "Check your email and confirm your account, you must be confirmed "
+                                     + "before you can log in.";
+
+                     return View("Info");
+                     //return RedirectToAction("Index", "Home");
+                  
 
                 }
                 AddErrors(result);
@@ -190,7 +201,7 @@ namespace MyFollow.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize]
         public ActionResult Register()
         {
             return View();
@@ -203,36 +214,51 @@ namespace MyFollow.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+
+            var user1 = await UserManager.FindByNameAsync(model.Email);
+            if (user1 != null)
             {
-                var user = new ApplicationUser
+                if (!await UserManager.IsEmailConfirmedAsync(user1.Id))
                 {
-                    OwnerName = model.OwnerName,
-                    UserName = model.OwnerName,
-                    Email = model.Email,
-                   
-                  Owner = new Owner { 
-                        Email = model.Email,
-                        OwnerName = model.OwnerName,
-                        CompanyName = model.CompanyName}
-                   
-                };
-
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    return RedirectToAction("Index", "Home");
+                    ViewBag.errorMessage = "Before Registering, you need to Invite youself first from login page.";
+                    return View("Error");
                 }
-                AddErrors(result);
             }
+            if(ModelState.IsValid)
+                {
+
+                    var user = new ApplicationUser
+                    {
+                        OwnerName = model.OwnerName,
+                        UserName = model.OwnerName,
+                        Email = model.Email,
+
+                        Owner = new Owner
+                        {
+                            Email = model.Email,
+                            OwnerName = model.OwnerName,
+                            CompanyName = model.CompanyName
+                        }
+
+                    };
+
+
+                    var result = await UserManager.CreateAsync(user, model.Password);
+                    if (result.Succeeded)
+                    {
+                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                        // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                        // Send an email with this link
+                        // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                        // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                        // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                        return RedirectToAction("Index", "Home");
+                    }
+                    AddErrors(result);
+                }
+            
 
             // If we got this far, something failed, redisplay form
             return View(model);
