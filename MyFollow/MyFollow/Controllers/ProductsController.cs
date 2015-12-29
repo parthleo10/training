@@ -6,22 +6,28 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+using Microsoft.AspNet.Identity;
+using MyFollow.Authorization;
 using MyFollow.DAL;
 using MyFollow.Entities;
+using Owin.Security.Providers.OpenID.Infrastructure;
 
 namespace MyFollow.Controllers
 {
-    
+    [Authorize]
     public class ProductsController : Controller
     {
         private FollowContext db = new FollowContext();
 
+        
         // GET: Products
         public ActionResult Index()
         {
             return View(db.Products.ToList());
         }
 
+        
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
@@ -37,9 +43,14 @@ namespace MyFollow.Controllers
             return View(product);
         }
 
+       [AccessDeniedAuthorize(Roles = "Admin")]
         // GET: Products/Create
         public ActionResult Create()
         {
+            
+           
+        
+           
             return View();
         }
 

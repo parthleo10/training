@@ -18,6 +18,11 @@ namespace MyFollow
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new IdentityDb()));
+            roleManager.Create(new IdentityRole("Admin"));
+            roleManager.Create(new IdentityRole("User"));
+            roleManager.Create(new IdentityRole("RegisterAdmin"));
+            
             // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(IdentityDb.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);

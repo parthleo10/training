@@ -189,11 +189,17 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Authorization\AccessDeniedAuthorizeAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="DAL\FollowContext.cs" />
+    <Compile Include="DAL\FollowMigrations\201512291027438_Initial Create.cs" />
+    <Compile Include="DAL\FollowMigrations\201512291027438_Initial Create.Designer.cs">
+      <DependentUpon>201512291027438_Initial Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\FollowMigrations\Configuration.cs" />
     <Compile Include="DAL\IdentityDb.cs" />
     <Compile Include="DAL\IdentityMigrations\201512281324396_email nullable.cs" />
     <Compile Include="DAL\IdentityMigrations\201512281324396_email nullable.Designer.cs">
@@ -290,6 +296,8 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Invite.cshtml" />
     <Content Include="Views\Shared\Info.cshtml" />
+    <Content Include="Views\Shared\InviteError.cshtml" />
+    <Content Include="Views\Account\AccessDeniedAuthorize.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,6 +313,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DAL\FollowMigrations\201512291027438_Initial Create.resx">
+      <DependentUpon>201512291027438_Initial Create.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DAL\IdentityMigrations\201512281324396_email nullable.resx">
       <DependentUpon>201512281324396_email nullable.cs</DependentUpon>
     </EmbeddedResource>

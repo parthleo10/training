@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MyFollow.DAL;
@@ -123,6 +124,7 @@ namespace MyFollow.Controllers
             var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
+                    
                     //  Comment the following line to prevent log in until the user is confirmed.
                     //  await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
@@ -201,12 +203,17 @@ namespace MyFollow.Controllers
 
         //
         // GET: /Account/Register
-        [Authorize]
+        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
         }
-         
+
+        public ActionResult AccessDeniedAuthorize()
+        {
+            return View();
+        }
+
         //
         // POST: /Account/Register
         [HttpPost]
@@ -220,13 +227,11 @@ namespace MyFollow.Controllers
             {
                 if (!await UserManager.IsEmailConfirmedAsync(user1.Id))
                 {
-                    ViewBag.errorMessage = "Before Registering, you need to Invite youself first from login page.";
+                    ViewBag.errorMessage = "Before Registration, you need to confirm your email sent by Admin. Check your email!";
                     return View("Error");
                 }
-            }
-            if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
-
                     var user = new ApplicationUser
                     {
                         OwnerName = model.OwnerName,
@@ -239,13 +244,13 @@ namespace MyFollow.Controllers
                             OwnerName = model.OwnerName,
                             CompanyName = model.CompanyName
                         }
-
                     };
 
-
                     var result = await UserManager.CreateAsync(user, model.Password);
+                    
                     if (result.Succeeded)
                     {
+                        UserManager.AddToRole(user.Id, "RegisterAdmin");
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                         // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -258,10 +263,10 @@ namespace MyFollow.Controllers
                     }
                     AddErrors(result);
                 }
-            
-
+            }
             // If we got this far, something failed, redisplay form
-            return View(model);
+            ViewBag.errorMessage = "Before Registration, you need to be invited from Admin.";
+            return View("InviteError");
         }
 
         //
@@ -463,6 +468,7 @@ namespace MyFollow.Controllers
                 {
                     UserName = model.EndUserName,
                     Email = model.Email,
+                    
                     EndUser = new EndUser
                     {
                         EndUserName = model.EndUserName,
@@ -473,6 +479,7 @@ namespace MyFollow.Controllers
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
+                    UserManager.AddToRole(user.Id, "User");
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
