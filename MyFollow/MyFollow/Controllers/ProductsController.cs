@@ -24,6 +24,7 @@ namespace MyFollow.Controllers
         // GET: Products
         public ActionResult Index()
         {
+            
             return View(db.Products.ToList());
         }
 

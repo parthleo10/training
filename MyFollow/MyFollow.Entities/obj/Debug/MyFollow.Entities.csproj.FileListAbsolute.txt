@@ -10,7 +10,6 @@ D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\EntityFramework.xml
 D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\EntityFramework.SqlServer.xml
 D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-D:\parth2015\training\MyFollow\MyFollow.Entities\obj\Debug\MyFollow.Entities.csprojResolveAssemblyReference.cache
 D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\MyFollow.Entities.dll.config
 D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\Newtonsoft.Json.dll
 D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\SendGrid.dll
@@ -19,3 +18,4 @@ D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\SendGridMail.dll
 D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\System.Net.Http.Formatting.dll
 D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\Newtonsoft.Json.xml
 D:\parth2015\training\MyFollow\MyFollow.Entities\bin\Debug\System.Net.Http.Formatting.xml
+D:\parth2015\training\MyFollow\MyFollow.Entities\obj\Debug\MyFollow.Entities.csprojResolveAssemblyReference.cache

@@ -130,6 +130,7 @@ namespace MyFollow.Controllers
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
+                    
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                      var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                      await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
@@ -201,6 +202,8 @@ namespace MyFollow.Controllers
             }
         }
 
+
+
         //
         // GET: /Account/Register
         [AllowAnonymous]
@@ -242,7 +245,20 @@ namespace MyFollow.Controllers
                         {
                             Email = model.Email,
                             OwnerName = model.OwnerName,
-                            CompanyName = model.CompanyName
+                            CompanyName = model.CompanyName,
+                            Description = model.Description,
+                            DateOfJoining = model.DateOfJoining,
+                            FoundedIn = model.FoundedIn,
+                            Street1 = model.Street1,
+                            Street2 = model.Street2,
+                            City = model.City,
+                            State = model.State,
+                            Country = model.Country,
+                            Pin = model.Pin,
+                            ContactNumber = model.ContactNumber,
+                            WebsiteUrl = model.WebsiteUrl,
+                            TwitterHandler = model.TwitterHandler,
+                            FacebookPageUrl = model.FacebookPageUrl
                         }
                     };
 
@@ -308,10 +324,10 @@ namespace MyFollow.Controllers
 
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
+                 await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                 return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form
@@ -541,6 +557,8 @@ namespace MyFollow.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+
         internal class ChallengeResult : HttpUnauthorizedResult
         {
             public ChallengeResult(string provider, string redirectUri)
@@ -568,6 +586,18 @@ namespace MyFollow.Controllers
                 }
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
+        }
+        
+
+        private async Task<string> SendEmailConfirmationTokenAsync(string userId, string subject)
+        {
+            string code = await UserManager.GenerateEmailConfirmationTokenAsync(userId);
+            var callbackUrl = Url.Action("ConfirmEmail", "Account",
+               new { userId = userId, code = code }, protocol: Request.Url.Scheme);
+            await UserManager.SendEmailAsync(userId, subject,
+               "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+            return callbackUrl;
         }
         #endregion
     }

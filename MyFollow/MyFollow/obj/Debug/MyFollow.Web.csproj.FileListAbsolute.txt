@@ -64,3 +64,4 @@ D:\parth2015\training\MyFollow\MyFollow\bin\System.Net.Http.Formatting.xml
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.emailnullable.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.web.csproj.GenerateResource.Cache
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.FollowMigrations.InitialCreate.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.Initial2.resources

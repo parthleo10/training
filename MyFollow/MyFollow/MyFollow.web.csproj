@@ -205,6 +205,10 @@
     <Compile Include="DAL\IdentityMigrations\201512281324396_email nullable.Designer.cs">
       <DependentUpon>201512281324396_email nullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\IdentityMigrations\201512301113446_Initial2.cs" />
+    <Compile Include="DAL\IdentityMigrations\201512301113446_Initial2.Designer.cs">
+      <DependentUpon>201512301113446_Initial2.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\IdentityMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -318,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DAL\IdentityMigrations\201512281324396_email nullable.resx">
       <DependentUpon>201512281324396_email nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201512301113446_Initial2.resx">
+      <DependentUpon>201512301113446_Initial2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
