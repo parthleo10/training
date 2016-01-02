@@ -34,7 +34,6 @@ namespace MyFollow.Models
             return userIdentity;
         }
     }
-
     public class Invitation
     {
         
@@ -119,12 +118,10 @@ namespace MyFollow.Models
 
     public class EndUser
     {
-        
-        public int EndId { get; set; }
+        public int ID { get; set; }
 
         [Required]
         [Display(Name = "User Name")]
-
         public string EndUserName { get; set; }
 
         [Required]
@@ -161,6 +158,9 @@ namespace MyFollow.Models
         [Display(Name = "Contact Number")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
         public string ContactNumber { get; set; }
+
+        public virtual ICollection<Followproduct> Followroduct { get; set; }
+
 
     }
 

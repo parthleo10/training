@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
-using MyFollow.Entities;
+using MyFollow.Models;
 
 namespace MyFollow.DAL
 {
@@ -14,13 +14,9 @@ namespace MyFollow.DAL
             : base("DefaultConnection")
             {
             }
+         
+            public DbSet<Produ> Product { get; set; }
 
-            public DbSet<Product> Products { get; set; }
-
-            protected override void OnModelCreating(DbModelBuilder modelBuilder)
-            {
-                modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
-            }
+           
         }
 }
