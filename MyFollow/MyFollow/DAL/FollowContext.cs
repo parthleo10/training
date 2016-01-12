@@ -15,7 +15,7 @@ namespace MyFollow.DAL
             {
             }
          
-            public DbSet<Produ> Product { get; set; }
+            public DbSet<Product> Product { get; set; }
 
            
         }

@@ -15,7 +15,7 @@ namespace MyFollow.Models
     public class ApplicationUser : IdentityUser
     {
 
-        public virtual Owner Owner { get; set; }
+        public virtual Owner Owner { get; set; } //this creates foreign key set in user class
 
         public virtual EndUser EndUser { get; set; }
 
@@ -24,7 +24,8 @@ namespace MyFollow.Models
         [Display(Name = "Owner Name")]
         public string OwnerName { get; set; }
 
-
+        public virtual ICollection<Product> Products { get; set; }
+        
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -159,7 +160,7 @@ namespace MyFollow.Models
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
         public string ContactNumber { get; set; }
 
-        public virtual ICollection<Followproduct> Followroduct { get; set; }
+       
 
 
     }

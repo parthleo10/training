@@ -115,11 +115,9 @@ namespace MyFollow.Controllers
                     InviteOwnerName  = model.InviteOwnerName,
                     Email = model.Email,
                     CompanyName = model.CompanyName
-                }
+              } 
             };
            
-
-
 
             var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)

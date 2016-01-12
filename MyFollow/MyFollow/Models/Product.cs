@@ -9,8 +9,7 @@ namespace MyFollow.Models
 {
     public class Product
 {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProductID { get; set; }
+        public int ProductId { get; set; }
 
         [Required]
         [StringLength(20,MinimumLength = 1)]
@@ -31,6 +30,7 @@ namespace MyFollow.Models
         [Display(Name = "Product Price")]
         public double Productprice { get; set; }
 
-        public virtual ICollection<Followproduct> Followproduct { get; set; }
+        public virtual ApplicationUser User { get; set; }
+        
 }
 }

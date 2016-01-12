@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My Follow</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular")
 
 </head>
 <body>
@@ -24,7 +25,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Products", "Index", "Products")</li> @*("title","method of controller","controller")*@
+                    @*("title","method of controller","controller")*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

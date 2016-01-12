@@ -21,6 +21,19 @@ namespace MyFollow.DAL
 
         public System.Data.Entity.DbSet<Invitation> Invitation { get; set; }
 
+        public DbSet<Product> Products { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Change the name of the table to be Users instead of AspNetUsers
+            modelBuilder.Entity<IdentityUser>()
+                .ToTable("Users");
+            modelBuilder.Entity<ApplicationUser>()
+                .ToTable("Users");
+        }
+
         public static IdentityDb Create()
         {
             return new IdentityDb();
