@@ -24,15 +24,15 @@ namespace MyFollow.Controllers
         // GET: Product/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Product product = db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
+              if (id == null)
+              {
+                  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+              }
+              Product product = db.Products.Find(id);
+              if (product == null)
+              {
+                  return HttpNotFound();
+              }
             return View(product);
         }
 

@@ -1,50 +1,57 @@
-﻿@model MyFollow.Models.Product
+﻿<!doctype html>
+<html lang="en" ng-app="myApp" ng-controller="productController">
+<head>
+    <title>Details</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Angular/app/app.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Product Details</h2>
+            </div>
+        </div><hr />
 
-@{
-    ViewBag.Title = "Details";
-}
+        <div>
+           <dl class="dl-horizontal" ng-repeat="product in ProductsIndex">
+                <dt>
+                    Product Name:
+                </dt>
 
-<h2>Details</h2>
+               <dd>
+                   {{product.name}}
+               </dd>
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
+                <dt>
+                    Product Details:
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
+                <dd>
+                    {{ 1+1 }}
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductIntro)
-        </dt>
+                <dt>
+                   Product Price:
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductIntro)
-        </dd>
+                <dd>
+                    {{ 1+1 }}
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductDetails)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProductDetails)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Productprice)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Productprice)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            </dl>
+        </div>
+        <p>
+            
+        </p>
+    </div>
+    <script src="~/Scripts/jquery-2.2.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Angular/app/app.js"></script>
+    <script src="~/Angular/app/Controllers/ProductController.js"></script>
+</body>
+</html>

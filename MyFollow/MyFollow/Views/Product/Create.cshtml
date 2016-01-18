@@ -1,64 +1,87 @@
-﻿@model MyFollow.Models.Product
+﻿<!doctype html>
+<html lang="en" ng-app="myApp" ng-controller="editProductController">
+<head>
+    <title>Index</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Angular/app/app.css" rel="stylesheet" />
+</head>
+<body>
+   <style>
+        input.ng-invalid.ng-dirty {
+            border-color: red;
+        }
 
-@{
-    ViewBag.Title = "Create";
-}
-
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Product</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProductIntro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProductIntro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProductIntro, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProductDetails, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProductDetails, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProductDetails, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Productprice, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Productprice, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Productprice, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+        textarea.ng-invalid.ng-dirty {
+            border-color: red;
+        }
+    </style>
+<div class="container">
+    <form name="newProductForm" novalidate>
+        <fieldset>
+            <div class="form-horizontal">
+                <h2>Product</h2>
+                <hr />
+                <div class="form-group">
+                    <div class="control-label col-md-2">
+                        <label>Product Name</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" placeholder="Product Name" ng-model="product.name" name="name" required/>
+                        <span style="color:red" ng-show="newProductForm.name.$dirty && newProductForm.name.$invalid">
+                            <span ng-show="newProductForm.name.$error.required">Username is required.</span>
+                        </span>
 </div>
+                </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+                <div class="form-group">
+                    <div class="control-label col-md-2">
+                        <label>Product Details</label>
+                    </div>
+                    <div class="col-md-10">
+                        <textarea name="details" type="text" class="form-control" placeholder="Product Details" ng-model="product.details" required></textarea>
+                        <span style="color:red" ng-show="newProductForm.details.$dirty && newProductForm.details.$invalid">
+                            <span ng-show="newProductForm.details.$error.required">Product's detail is required.</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="control-label col-md-2">
+                        <label>Product Price</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input name="price" type="text" class="form-control" placeholder="Product Price" ng-model="product.price" ng-pattern="/^\d{0,9}(\.\d{1,9})?$/" required/>
+                        <span style="color:red" ng-show="newProductForm.price.$dirty && newProductForm.price.$invalid">
+                            <span ng-show="newProductForm.price.$invalid">Price should be proper.</span>
+                        </span>
+                        
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-success" ng-disabled="newProductForm.$invalid" ng-click="postCreateProduct(product, newProductForm)" />
+                        <input type="submit" value="Reset" class="btn btn-default" ng-click="reset()" />
+
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <div>
+        <a href="Index">Back to list</a>
+    </div>
+
+</div>
+<script src="~/Scripts/jquery-2.2.0.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Angular/app/app.js"></script>
+<script src="~/Angular/app/Controllers/ProductController.js"></script>
+<script src="~/Angular/app/Controllers/EditProductController.js"></script>
+</body>
+</html>
