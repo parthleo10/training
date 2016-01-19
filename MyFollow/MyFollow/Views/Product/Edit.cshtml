@@ -45,7 +45,7 @@ textarea.ng-invalid.ng-dirty {border-color: red;}</style>
                     <div class="col-md-10">
                         <input type="text" class="form-control" placeholder="Product Price" ng-model="product.price" ng-pattern="/^\d{0,9}(\.\d{1,9})?$/" required/>
                         <span style="color:red" ng-show="newProductForm.price.$dirty && newProductForm.price.$invalid">
-                            <span ng-show="newProductForm.price.$invalid">Price should be proper.</span>
+                            <span ng-show="newProductForm.price.$invalid">Price should be valid.</span>
                         </span>
                     </div>
                 </div>

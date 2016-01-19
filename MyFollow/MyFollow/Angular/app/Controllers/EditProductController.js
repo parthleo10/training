@@ -1,5 +1,8 @@
 ﻿app.controller('editProductController', function editProductController($scope) {
+    
     $scope.resetProduct = {};
+
+    
 
     $scope.postCreateProduct = function (product, newProductForm) {
         if (newProductForm.$valid) {
