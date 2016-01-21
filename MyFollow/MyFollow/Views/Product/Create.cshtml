@@ -1,15 +1,15 @@
 ﻿<!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp" ng-controller="productController" ng-cloak>
 <head>
     <title>Index</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
-    <link href="~/Angular/app/app.css" rel="stylesheet" />
+    <link href="~/app/app.css" rel="stylesheet" />
 </head>
 <body>
-   <style>
+    <style>
         input.ng-invalid.ng-dirty {
             border-color: red;
         }
@@ -18,7 +18,7 @@
             border-color: red;
         }
     </style>
-    <div class="container" ng-controller="editProductController">
+    <div class="container">
         <form name="newProductForm" novalidate>
             <fieldset>
                 <div class="form-horizontal">
@@ -77,12 +77,13 @@
         </div>
 
     </div>
-<script src="~/Scripts/jquery-2.2.0.min.js"></script>
-<script src="~/Scripts/bootstrap.min.js"></script>
-<script src="~/Scripts/angular.js"></script>
-<script src="~/Angular/app/app.js"></script>
-<script src="~/Angular/app/Controllers/ProductController.js"></script>
-<script src="~/Angular/app/Controllers/EditProductController.js"></script>
-    <script src="~/Angular/app/Services/ProductService.js"></script>
+    <script src="~/Scripts/jquery-2.2.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/app/app.js"></script>
+    <script src="~/app/Controllers/Controllers.js"></script>
+    <script src="~/app/Services/ProductService.js"></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 ﻿<!doctype html>
-<html lang="en" ng-app="myApp" ng-controller="productController">
+<html lang="en" ng-app="myApp" ng-controller="productController" ng-cloak>
 <head>
     <title>Details</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
-    <link href="~/Angular/app/app.css" rel="stylesheet" />
+    <link href="~/app/app.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
@@ -17,14 +17,14 @@
         </div><hr />
 
         <div>
-           <dl class="dl-horizontal" ng-repeat="product in ProductsIndex">
+            <dl class="dl-horizontal" ng-repeat="product in ProductsIndex">
                 <dt>
                     Product Name:
                 </dt>
 
-               <dd>
-                   {{product.name}}
-               </dd>
+                <dd>
+                    {{product.name}}
+                </dd>
 
                 <dt>
                     Product Details:
@@ -35,7 +35,7 @@
                 </dd>
 
                 <dt>
-                   Product Price:
+                    Product Price:
                 </dt>
 
                 <dd>
@@ -45,13 +45,14 @@
             </dl>
         </div>
         <p>
-            
+
         </p>
     </div>
     <script src="~/Scripts/jquery-2.2.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/angular.js"></script>
-    <script src="~/Angular/app/app.js"></script>
-    <script src="~/Angular/app/Controllers/ProductController.js"></script>
+    <script src="~/app/app.js"></script>
+    <script src="~/app/Controllers/Controllers.js"></script>
+    <script src="~/app/Services/ProductService.js"></script>
 </body>
 </html>

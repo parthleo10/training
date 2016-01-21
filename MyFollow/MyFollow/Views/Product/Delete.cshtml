@@ -1,12 +1,12 @@
 ﻿<!doctype html>
-<html lang="en" ng-app="myApp" ng-controller="productController">
+<html lang="en" ng-app="myApp" ng-controller="productController" ng-cloak>
 <head>
     <title>Index</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
-    <link href="~/Angular/app/app.css" rel="stylesheet" />
+    <link href="~/app/app.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
@@ -42,7 +42,7 @@
                 </dd>
             </dl>
 
-           <form>
+            <form>
                 <div class="form-actions">
                     <input type="submit" value="Delete" class="btn btn-danger" ng-click="postdeleteProduct()" /> |
                     <a href="Index">Back to list</a>
@@ -53,7 +53,8 @@
     <script src="~/Scripts/jquery-2.2.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/angular.js"></script>
-    <script src="~/Angular/app/app.js"></script>
-    <script src="~/Angular/app/Controllers/ProductController.js"></script>
+    <script src="~/app/app.js"></script>
+    <script src="~/app/Controllers/Controllers.js"></script>
+    <script src="~/app/Services/ProductService.js"></script>
 </body>
 </html>
