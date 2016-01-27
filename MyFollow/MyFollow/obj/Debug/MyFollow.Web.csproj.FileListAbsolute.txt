@@ -61,3 +61,7 @@ D:\parth2015\training\MyFollow\MyFollow\bin\System.Net.Http.Formatting.xml
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.web.csprojResolveAssemblyReference.cache
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.InitialCreate.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.web.csproj.GenerateResource.Cache
+D:\parth2015\training\MyFollow\MyFollow\bin\System.Web.Http.dll
+D:\parth2015\training\MyFollow\MyFollow\bin\System.Web.Http.WebHost.dll
+D:\parth2015\training\MyFollow\MyFollow\bin\System.Web.Http.xml
+D:\parth2015\training\MyFollow\MyFollow\bin\System.Web.Http.WebHost.xml

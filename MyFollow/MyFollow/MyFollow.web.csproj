@@ -232,6 +232,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductApiController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DAL\IdentityDb.cs" />
     <Compile Include="DAL\IdentityMigrations\201601040521146_InitialCreate.cs" />
@@ -1140,16 +1141,16 @@
     <Content Include="Views\Shared\InviteError.cshtml" />
     <Content Include="Views\Account\AccessDeniedAuthorize.cshtml" />
     <Content Include="Scripts\version.json" />
-    <Content Include="Views\Product\Create.cshtml" />
-    <Content Include="Views\Product\Delete.cshtml" />
-    <Content Include="Views\Product\Details.cshtml" />
-    <Content Include="Views\Product\Edit.cshtml" />
-    <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\ProductTemplate\Create.cshtml" />
     <Content Include="Views\ProductTemplate\Delete.cshtml" />
     <Content Include="Views\ProductTemplate\Details.cshtml" />
     <Content Include="Views\ProductTemplate\Edit.cshtml" />
     <Content Include="Views\ProductTemplate\Index.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\Directives\" />
