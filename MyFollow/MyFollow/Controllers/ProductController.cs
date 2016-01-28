@@ -17,6 +17,5 @@ namespace MyFollow.Controllers
         {
             return View();
         }
-    
     }
 }

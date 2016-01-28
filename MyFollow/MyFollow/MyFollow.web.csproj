@@ -255,7 +255,11 @@
     <Content Include="app\app.js" />
     <Content Include="app\Controllers\Controllers.js" />
     <Content Include="app\Services\ProductService.js" />
-    <Content Include="app\Template\index.html" />
+    <Content Include="app\Template\Create.html" />
+    <Content Include="app\Template\Delete.html" />
+    <Content Include="app\Template\Details.html" />
+    <Content Include="app\Template\Edit.html" />
+    <Content Include="app\Template\Index.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -1141,11 +1145,6 @@
     <Content Include="Views\Shared\InviteError.cshtml" />
     <Content Include="Views\Account\AccessDeniedAuthorize.cshtml" />
     <Content Include="Scripts\version.json" />
-    <Content Include="Views\ProductTemplate\Create.cshtml" />
-    <Content Include="Views\ProductTemplate\Delete.cshtml" />
-    <Content Include="Views\ProductTemplate\Details.cshtml" />
-    <Content Include="Views\ProductTemplate\Edit.cshtml" />
-    <Content Include="Views\ProductTemplate\Index.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />

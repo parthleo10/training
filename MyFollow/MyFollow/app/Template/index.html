@@ -1,63 +1,38 @@
-﻿      <style>
-    input.ng-invalid.ng-dirty {
-        border-color: red;
-    }
+﻿<div class="container" ng-controller="productController" ng-init="getAdminProducts()">
 
-    textarea.ng-invalid.ng-dirty {
-        border-color: red;
-    }
-</style>
- 
-        <div class="container" ng-controller="productController">
-    <form name="newProductForm" novalidate>
-        <fieldset>
-            <div class="form-horizontal">
-                <h2>Product</h2>
-                <hr />
-                <div class="form-group">
-                    <div class="control-label col-md-2">
-                        <label>Product Name</label>
-                    </div>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control" placeholder="Product Name" ng-model="product.name" name="name" required />
-                        <span style="color:red" ng-show="newProductForm.name.$dirty && newProductForm.name.$invalid">
-                            <span ng-show="newProductForm.name.$error.required">Username is required.</span>
-                        </span>
-                    </div>
-                </div>
+    <a href="#/Create" type="button" class="btn btn-primary create">Create Product {{5+5}}</a><hr />
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>Products</h2>
+        </div>
+    </div><br />
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Details</th>
+                    <th>Product Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in ProductsIndex">
 
-                <div class="form-group">
-                    <div class="control-label col-md-2">
-                        <label>Product Details</label>
-                    </div>
-                    <div class="col-md-10">
-                        <textarea name="details" type="text" class="form-control" placeholder="Product Details" ng-model="product.details" required></textarea>
-                        <span style="color:red" ng-show="newProductForm.details.$dirty && newProductForm.details.$invalid">
-                            <span ng-show="newProductForm.details.$error.required">Product's detail is required.</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="control-label col-md-2">
-                        <label>Product Price</label>
-                    </div>
-                    <div class="col-md-10">
-                        <input name="price" type="text" class="form-control" placeholder="Product Price" ng-model="product.price" ng-pattern="/^\d{0,9}(\.\d{1,9})?$/" required />
-                        <span style="color:red" ng-show="newProductForm.price.$dirty && newProductForm.price.$invalid">
-                            <span ng-show="newProductForm.price.$invalid">Price should be valid.</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-success" ng-disabled="newProductForm.$invalid" ng-click="postCreateProduct(product, newProductForm)" />
-                        <input type="submit" value="Reset" class="btn btn-default" ng-click="reset()" />
-                    </div>
-                </div>
-            </div>
-        </fieldset>
-    </form>
-    <div>
-        <a href="#/Index">Back to list</a>
+                    <td>{{product.name}}</td>
+
+                    <td>{{product.details}}</td>
+
+                    <td>{{product.price}}</td>
+
+                    <td>
+                        <input type="button" class="btn btn-info" value="Details" ng-click="getDetailsProduct()" />
+                        <input type="button" class="btn btn-warning" value="Edit" ng-click="getEditProduct()" />
+                        <input type="button" class="btn btn-danger" value="Delete" ng-click="getDeleteProduct()" />
+                        <input type="button" class="btn btn-info" value="Follow" ng-click="FollowProduct()" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

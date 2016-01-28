@@ -1,0 +1,62 @@
+﻿<style>
+    input.ng-invalid.ng-dirty {
+        border-color: red;
+    }
+
+    textarea.ng-invalid.ng-dirty {
+        border-color: red;
+    }
+</style>
+<div class="container" ng-controller="productController">
+    <form name="newProductForm" novalidate>
+        <fieldset>
+            <div class="form-horizontal">
+                <h2>Product</h2>
+                <hr />
+                <div class="form-group">
+                    <div class="control-label col-md-2">
+                        <label>Product Name</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" placeholder="Product Name" ng-model="product.name" required />
+                        <span style="color:red" ng-show="newProductForm.name.$dirty && newProductForm.name.$invalid">
+                            <span ng-show="newProductForm.name.$error.required">Username is required.</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="control-label col-md-2">
+                        <label>Product Details</label>
+                    </div>
+                    <div class="col-md-10">
+                        <textarea type="text" class="form-control" placeholder="Product Details" ng-model="product.details" required></textarea>
+                        <span style="color:red" ng-show="newProductForm.details.$dirty && newProductForm.details.$invalid">
+                            <span ng-show="newProductForm.details.$error.required">Product's detail is required.</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="control-label col-md-2">
+                        <label>Product Price</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" placeholder="Product Price" ng-model="product.price" ng-pattern="/^\d{0,9}(\.\d{1,9})?$/" required />
+                        <span style="color:red" ng-show="newProductForm.price.$dirty && newProductForm.price.$invalid">
+                            <span ng-show="newProductForm.price.$invalid">Price should be valid.</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" ng-disabled="newProductForm.$invalid" ng-click="postCreateProduct(product, newProductForm)" />
+                        <input type="submit" value="Reset" class="btn btn-default" ng-click="reset()" />
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <div>
+        <a href="#Index">Back to list</a>
+    </div>
+</div>
