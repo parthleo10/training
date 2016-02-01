@@ -17,13 +17,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="product in ProductsIndex">
+                <tr ng-repeat="product in products">
 
-                    <td>{{product.name}}</td>
+                    <td>{{product.productName}}</td>
 
-                    <td>{{product.details}}</td>
+                    <td>{{product.productDetails}}</td>
 
-                    <td>{{product.price}}</td>
+                    <td>{{product.productPrice}}</td>
 
                     <td>
                         <input type="button" class="btn btn-info" value="Details" ng-click="getDetailsProduct()" />

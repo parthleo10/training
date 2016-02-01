@@ -65,3 +65,7 @@ D:\parth2015\training\MyFollow\MyFollow\bin\System.Web.Http.dll
 D:\parth2015\training\MyFollow\MyFollow\bin\System.Web.Http.WebHost.dll
 D:\parth2015\training\MyFollow\MyFollow\bin\System.Web.Http.xml
 D:\parth2015\training\MyFollow\MyFollow\bin\System.Web.Http.WebHost.xml
+D:\parth2015\training\MyFollow\MyFollow\bin\XmlDocument.xml
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.product.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.productvalildation.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.productvalildation1.resources

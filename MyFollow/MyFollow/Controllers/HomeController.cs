@@ -12,6 +12,7 @@ using MyFollow.Models;
 namespace MyFollow.Controllers
 {
     [RequireHttps]
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()

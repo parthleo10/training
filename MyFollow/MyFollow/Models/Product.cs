@@ -11,24 +11,19 @@ namespace MyFollow.Models
 {
         public int ProductId { get; set; }
 
-        [Required]
-        [StringLength(20,MinimumLength = 1)]
-        [Display(Name= "Product Name")]
+      
+        
+        
         public string ProductName { get; set; }
 
-        [Required]
-        [StringLength(140,MinimumLength = 1)]
-        [Display(Name = "Product Intro")]
-        public string ProductIntro { get; set; }
-
-        [Required]
-        [StringLength(1000,MinimumLength = 1)]
-        [Display(Name = "Product Details")]
+       
+        
+        
         public string ProductDetails { get; set; }
 
-        [Required]
-        [Display(Name = "Product Price")]
-        public double Productprice { get; set; }
+     
+      
+        public double ProductPrice { get; set; }
 
         public virtual ApplicationUser User { get; set; }
         

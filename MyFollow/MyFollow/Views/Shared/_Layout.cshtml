@@ -17,18 +17,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            @Html.ActionLink("My Follow", "Index", "Product", new {area = ""}, new {@class = "navbar-brand"})
+            @Html.ActionLink("My Follow", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
 
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                
+
                 <li><a href="/Product/Index#/">My Products</a></li>
+                <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
 
                 @if (User.IsInRole("Admin"))
                 {
                     
-                    <li>@Html.ActionLink("API", "Index", "Help", new {area = ""}, null)</li>
+                    
                 }
                 @if (User.IsInRole("User"))
                 {
@@ -58,7 +59,7 @@
     <script src="~/Scripts/angular-resource.min.js"></script>
     <script src="~/app/app.js"></script>
     <script src="~/app/Controllers/Controllers.js"></script>
-<script src="~/app/Services/ProductService.js"></script>
+    <script src="~/app/Services/ProductService.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

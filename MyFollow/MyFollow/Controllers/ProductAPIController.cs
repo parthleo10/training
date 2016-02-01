@@ -8,24 +8,44 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using MyFollow.DAL;
 using MyFollow.Models;
 
 namespace MyFollow.Controllers
 {
-    [RoutePrefix("api/Product")]
+    /// <summary>
+    /// Product Api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    /// </summary>
+    [AllowAnonymous]
+    [RoutePrefix("api/ProductApi")]
     public class ProductApiController : ApiController
     {
         private IdentityDb db = new IdentityDb();
+        private UserManager<ApplicationUser> manager;
 
-        // GET: api/Product
-        [Route("")]
-        public IQueryable<Product> GetAllProducts()
+        public ProductApiController()
         {
-            return db.Products;
+            manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
         }
 
-        // GET: api/Product/5
+        // GET: api/ProductApi
+        /// <summary>
+        /// Gets all products created by specific owner.
+        /// </summary>
+        [Route("")]
+        public IEnumerable<Product> GetAllProducts()
+        {
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+            return db.Products.ToList().Where(p => p.User.Id == currentUser.Id);
+        }
+
+        // GET: api/ProductApi/5
+        /// <summary>
+        /// Looks up some products by ID.
+        /// </summary>
+        /// <param name="id">The ID of product.</param>
         [Route("{id:int}")]
         [ResponseType(typeof(Product))]
         public IHttpActionResult GetProduct(int id)
@@ -39,10 +59,10 @@ namespace MyFollow.Controllers
             return Ok(product);
         }
         
-        // GET: api/Product/5
-        //<summary>
-        //GET Product Details
-        //</summary>
+        // GET: api/ProductApi/5
+        ///<summary>
+        ///GET Product Details by ID
+        ///</summary>
         [Route("{id:int}/details")]
         [ResponseType(typeof(Product))]
         public IHttpActionResult GetProductDetails(int id)
@@ -56,7 +76,10 @@ namespace MyFollow.Controllers
             return Ok(product);
         }
 
-        // PUT: api/Product/5
+        // PUT: api/ProductApi/5
+        ///<summary>
+        ///UPDATE Product by ID
+        ///</summary>
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProduct(int id, Product product)
         {
@@ -91,22 +114,32 @@ namespace MyFollow.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Product
+        // POST: api/ProductApi
+        ///<summary>
+        ///CREATE Product
+        ///</summary>
         [ResponseType(typeof(Product))]
+        [AllowAnonymous]
+        [Route("Create")]
         public IHttpActionResult PostProduct(Product product)
         {
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
+             = currentUser;
             db.Products.Add(product);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = product.ProductId }, product);
+            return CreatedAtRoute("DefaultApi", new {controller= "ProductApi" , id = product.ProductId }, product);
         }
         
-        // DELETE: api/Product/5
+        // DELETE: api/ProductApi/5
+        ///<summary>
+        ///Delete Product by ID
+        ///</summary>
         [ResponseType(typeof(Product))]
         public IHttpActionResult DeleteProduct(int id)
         {

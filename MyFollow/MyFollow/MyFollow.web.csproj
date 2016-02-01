@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data/XmlDocument.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -238,6 +239,18 @@
     <Compile Include="DAL\IdentityMigrations\201601040521146_InitialCreate.cs" />
     <Compile Include="DAL\IdentityMigrations\201601040521146_InitialCreate.Designer.cs">
       <DependentUpon>201601040521146_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\IdentityMigrations\201602010857274_product.cs" />
+    <Compile Include="DAL\IdentityMigrations\201602010857274_product.Designer.cs">
+      <DependentUpon>201602010857274_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\IdentityMigrations\201602011042015_product valildation.cs" />
+    <Compile Include="DAL\IdentityMigrations\201602011042015_product valildation.Designer.cs">
+      <DependentUpon>201602011042015_product valildation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\IdentityMigrations\201602011050462_product valildation 1.cs" />
+    <Compile Include="DAL\IdentityMigrations\201602011050462_product valildation 1.Designer.cs">
+      <DependentUpon>201602011050462_product valildation 1.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\IdentityMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
@@ -1162,6 +1175,15 @@
   <ItemGroup>
     <EmbeddedResource Include="DAL\IdentityMigrations\201601040521146_InitialCreate.resx">
       <DependentUpon>201601040521146_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201602010857274_product.resx">
+      <DependentUpon>201602010857274_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201602011042015_product valildation.resx">
+      <DependentUpon>201602011042015_product valildation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201602011050462_product valildation 1.resx">
+      <DependentUpon>201602011050462_product valildation 1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
