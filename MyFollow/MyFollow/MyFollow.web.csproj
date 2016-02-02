@@ -252,6 +252,14 @@
     <Compile Include="DAL\IdentityMigrations\201602011050462_product valildation 1.Designer.cs">
       <DependentUpon>201602011050462_product valildation 1.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\IdentityMigrations\201602011409502_product valildation 2.cs" />
+    <Compile Include="DAL\IdentityMigrations\201602011409502_product valildation 2.Designer.cs">
+      <DependentUpon>201602011409502_product valildation 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\IdentityMigrations\201602020449248_owners product.cs" />
+    <Compile Include="DAL\IdentityMigrations\201602020449248_owners product.Designer.cs">
+      <DependentUpon>201602020449248_owners product.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\IdentityMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1184,6 +1192,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DAL\IdentityMigrations\201602011050462_product valildation 1.resx">
       <DependentUpon>201602011050462_product valildation 1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201602011409502_product valildation 2.resx">
+      <DependentUpon>201602011409502_product valildation 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201602020449248_owners product.resx">
+      <DependentUpon>201602020449248_owners product.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

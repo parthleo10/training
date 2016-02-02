@@ -18,7 +18,7 @@ namespace MyFollow.Controllers
     /// <summary>
     /// Product Api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
     /// </summary>
-    [AllowAnonymous]
+    [Authorize]
     [RoutePrefix("api/ProductApi")]
     public class ProductApiController : ApiController
     {
@@ -35,10 +35,13 @@ namespace MyFollow.Controllers
         /// Gets all products created by specific owner.
         /// </summary>
         [Route("")]
-        public IEnumerable<Product> GetAllProducts()
+        public IHttpActionResult GetAllProducts()
         {
             var currentUser = manager.FindById(User.Identity.GetUserId());
-            return db.Products.ToList().Where(p => p.User.Id == currentUser.Id);
+
+            var products = db.Products.ToList().Where(p => p.User.Id == currentUser.Id);
+
+            return Ok(products);
         }
 
         // GET: api/ProductApi/5
@@ -119,7 +122,6 @@ namespace MyFollow.Controllers
         ///CREATE Product
         ///</summary>
         [ResponseType(typeof(Product))]
-        [AllowAnonymous]
         [Route("Create")]
         public IHttpActionResult PostProduct(Product product)
         {
@@ -129,11 +131,11 @@ namespace MyFollow.Controllers
             {
                 return BadRequest(ModelState);
             }
-             = currentUser;
+            product.UserId = currentUser.Id;
             db.Products.Add(product);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new {controller= "ProductApi" , id = product.ProductId }, product);
+            return CreatedAtRoute("DefaultApi", new {controller= "ProductApi" , id = product.ProductId }, new Product{ProductId = product.ProductId, ProductName = product.ProductName, ProductDetails = product.ProductDetails, ProductPrice = product.ProductPrice});
         }
         
         // DELETE: api/ProductApi/5

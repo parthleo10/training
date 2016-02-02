@@ -69,3 +69,5 @@ D:\parth2015\training\MyFollow\MyFollow\bin\XmlDocument.xml
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.product.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.productvalildation.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.productvalildation1.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.productvalildation2.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.ownersproduct.resources

@@ -15,7 +15,7 @@
                 success(function(data, status, header, config) {
                     alert('product added successsfully');
                     $location.path('/');
-                }).
+            }).
                 error(function(data, status, header, config) {
                     alert("error");
                 });

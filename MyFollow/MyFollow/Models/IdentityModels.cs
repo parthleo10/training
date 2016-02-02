@@ -21,7 +21,6 @@ namespace MyFollow.Models
 
         public virtual Invitation Invitation { get; set; }
 
-        [Display(Name = "Owner Name")]
         public string OwnerName { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
