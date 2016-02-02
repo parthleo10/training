@@ -39,9 +39,9 @@ namespace MyFollow.Controllers
         {
             var currentUser = manager.FindById(User.Identity.GetUserId());
 
-            var products = db.Products.ToList().Where(p => p.User.Id == currentUser.Id);
+            var products = db.Products.Where(p => p.UserId == currentUser.Id).ToList();
 
-            return Ok(products);
+            return Ok(products) ;
         }
 
         // GET: api/ProductApi/5
