@@ -1,4 +1,4 @@
-﻿<div class="container" ng-controller="productController" ng-init="getAdminProducts()">
+﻿<div class="container" ng-controller="productIndexController" ng-init="getAdminProducts()">
 
     <a href="#/Create" type="button" class="btn btn-primary create">Create Product {{5+5}}</a><hr />
     <div class="row">
@@ -26,8 +26,8 @@
                     <td>{{product.productPrice}}</td>
 
                     <td>
-                        <input type="button" class="btn btn-info" value="Details" ng-click="getDetailsProduct()" />
-                        <input type="button" class="btn btn-warning" value="Edit" ng-click="getEditProduct()" />
+                        <a type="button" href="#/Update/?{{product.productId}}" class="btn btn-warning">Update</a>
+                        <input type="button" class="btn btn-info" value="Edit" ng-click="getDetailsProduct()" />
                         <input type="button" class="btn btn-danger" value="Delete" ng-click="getDeleteProduct()" />
                         <input type="button" class="btn btn-info" value="Follow" ng-click="FollowProduct()" />
                     </td>

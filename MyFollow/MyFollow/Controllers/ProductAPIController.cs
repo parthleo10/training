@@ -11,6 +11,7 @@ using System.Web.Http.Description;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using MyFollow.DAL;
+using MyFollow.DAL.IdentityMigrations;
 using MyFollow.Models;
 
 namespace MyFollow.Controllers
@@ -79,10 +80,28 @@ namespace MyFollow.Controllers
             return Ok(product);
         }
 
+
+        /*   // PUT: api/ProductApi/5
+           ///<summary>
+           ///UPDATE Product by ID
+           ///</summary>
+           [HttpGet]
+           [Route("{id:int}/update")]
+           [ResponseType(typeof (void))]
+             public IHttpActionResult EditProduct(int id)
+             {
+                 if (id != product.ProductId)
+                 {
+                     return BadRequest();
+                 }
+                 return;
+             } */
+
         // PUT: api/ProductApi/5
         ///<summary>
         ///UPDATE Product by ID
         ///</summary>
+        [Route("{id:int}/update")]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProduct(int id, Product product)
         {

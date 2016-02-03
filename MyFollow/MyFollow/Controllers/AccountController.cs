@@ -493,7 +493,7 @@ namespace MyFollow.Controllers
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
-                    UserManager.AddToRole(user.Id, "User");
+                    UserManager.AddToRole(user.Id, "Enduser");
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {

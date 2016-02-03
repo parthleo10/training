@@ -1,4 +1,4 @@
-﻿<div class="container" ng-controller="productController">
+﻿<div class="container" ng-controller="productDetailsController">
     <div class="row">
         <div class="col-lg-12">
             <h2>Product Details</h2>
@@ -6,13 +6,13 @@
     </div><hr />
 
     <div>
-        <dl class="dl-horizontal" ng-repeat="product in ProductsIndex">
+        <dl class="dl-horizontal" ng-repeat="product in Products">
             <dt>
                 Product Name:
             </dt>
 
             <dd>
-                {{product.name}}
+                {{product.productName}}
             </dd>
 
             <dt>
@@ -20,7 +20,7 @@
             </dt>
 
             <dd>
-                {{ 1+1 }}
+                {{product.productDetails}}
             </dd>
 
             <dt>
@@ -28,7 +28,7 @@
             </dt>
 
             <dd>
-                {{ 1+1 }}
+                {{product.productPrice}}
             </dd>
 
         </dl>

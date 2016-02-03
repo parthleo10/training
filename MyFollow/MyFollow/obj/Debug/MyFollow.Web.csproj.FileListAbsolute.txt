@@ -58,7 +58,6 @@ D:\parth2015\training\MyFollow\MyFollow\bin\SendGrid.SmtpApi.dll
 D:\parth2015\training\MyFollow\MyFollow\bin\SendGridMail.dll
 D:\parth2015\training\MyFollow\MyFollow\bin\System.Net.Http.Formatting.dll
 D:\parth2015\training\MyFollow\MyFollow\bin\System.Net.Http.Formatting.xml
-D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.web.csprojResolveAssemblyReference.cache
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.InitialCreate.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.web.csproj.GenerateResource.Cache
 D:\parth2015\training\MyFollow\MyFollow\bin\System.Web.Http.dll
@@ -71,3 +70,5 @@ D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigration
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.productvalildation1.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.productvalildation2.resources
 D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.ownersproduct.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.DAL.IdentityMigrations.multipleobjects.resources
+D:\parth2015\training\MyFollow\MyFollow\obj\Debug\MyFollow.web.csprojResolveAssemblyReference.cache

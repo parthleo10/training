@@ -260,6 +260,10 @@
     <Compile Include="DAL\IdentityMigrations\201602020449248_owners product.Designer.cs">
       <DependentUpon>201602020449248_owners product.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\IdentityMigrations\201602030523165_multiple objects.cs" />
+    <Compile Include="DAL\IdentityMigrations\201602030523165_multiple objects.Designer.cs">
+      <DependentUpon>201602030523165_multiple objects.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\IdentityMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -274,8 +278,11 @@
   <ItemGroup>
     <Content Include="app\app.css" />
     <Content Include="app\app.js" />
-    <Content Include="app\Controllers\Controllers.js" />
-    <Content Include="app\Services\ProductService.js" />
+    <Content Include="app\Controllers\ProductDeleteControllers.js" />
+    <Content Include="app\Controllers\ProductDetailsControllers.js" />
+    <Content Include="app\Controllers\ProductEditControllers.js" />
+    <Content Include="app\Controllers\ProductIndexControllers.js" />
+    <Content Include="app\Controllers\ProductCreateControllers.js" />
     <Content Include="app\Template\Create.html" />
     <Content Include="app\Template\Delete.html" />
     <Content Include="app\Template\Details.html" />
@@ -1174,6 +1181,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\Directives\" />
+    <Folder Include="app\Services\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -1198,6 +1206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DAL\IdentityMigrations\201602020449248_owners product.resx">
       <DependentUpon>201602020449248_owners product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201602030523165_multiple objects.resx">
+      <DependentUpon>201602030523165_multiple objects.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -5,23 +5,23 @@ app.config(['$routeProvider',
       $routeProvider.
           when('/', {
               templateUrl: '/app/Template/Index.html',
-              controller: 'productController'
+              controller: 'productIndexController'
           });
       $routeProvider.when('/Create', {
           templateUrl: '/app/Template/Create.html',
-          controller: 'productController'
+          controller: 'productCreateController'
       });
-      $routeProvider.when('/Edit', {
+      $routeProvider.when('/Update', {
           templateUrl: '/app/Template/Edit.html',
-          controller: 'productController'
+          controller: 'productEditController'
       });
       $routeProvider.when('/Details', {
           templateUrl: '/app/Template/Details.html',
-          controller: 'productController'
+          controller: 'productDetailsController'
       });
       $routeProvider.when('/Delete', {
               templateUrl: '/app/Template/Delete.html',
-              controller: 'productController'
+              controller: 'productDeleteController'
           });
   }]);
  
