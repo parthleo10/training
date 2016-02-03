@@ -1,6 +1,0 @@
-D:\parth2015\training\AngularApp\AngularApp\bin\AngularApp.dll.config
-D:\parth2015\training\AngularApp\AngularApp\bin\AngularApp.dll
-D:\parth2015\training\AngularApp\AngularApp\bin\AngularApp.pdb
-D:\parth2015\training\AngularApp\AngularApp\obj\Debug\AngularApp.csprojResolveAssemblyReference.cache
-D:\parth2015\training\AngularApp\AngularApp\obj\Debug\AngularApp.dll
-D:\parth2015\training\AngularApp\AngularApp\obj\Debug\AngularApp.pdb
