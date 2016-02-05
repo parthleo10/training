@@ -21,7 +21,7 @@ namespace MyFollow
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new IdentityDb()));
             roleManager.Create(new IdentityRole("RegisterAdmin")); 
             roleManager.Create(new IdentityRole("Enduser"));
-            
+            roleManager.Create(new IdentityRole("Invitation"));
             
             // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(IdentityDb.Create);
