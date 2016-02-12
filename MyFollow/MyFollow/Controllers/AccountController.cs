@@ -141,8 +141,6 @@ namespace MyFollow.Controllers
 
                      return View("Info");
                      //return RedirectToAction("Index", "Home");
-                  
-
                 }
                 AddErrors(result);
             }

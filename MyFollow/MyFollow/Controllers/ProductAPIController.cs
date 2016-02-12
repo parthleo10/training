@@ -52,6 +52,7 @@ namespace MyFollow.Controllers
         /// <param name="id">The ID of product.</param>
         [Route("{id:int}")]
         [ResponseType(typeof(Product))]
+        [HttpGet]
         public IHttpActionResult GetProduct(int id)
         {
             Product product = db.Products.Find(id);
@@ -67,8 +68,9 @@ namespace MyFollow.Controllers
         ///<summary>
         ///GET Product Details by ID
         ///</summary>
-        [Route("{id:int}/details")]
+        [Route("{id:int}/Details")]
         [ResponseType(typeof(Product))]
+        [HttpGet]
         public IHttpActionResult GetProductDetails(int id)
         {
             Product product = db.Products.Find(id);
@@ -80,31 +82,16 @@ namespace MyFollow.Controllers
             return Ok(product);
         }
 
-
-        /*   // PUT: api/ProductApi/5
-           ///<summary>
-           ///UPDATE Product by ID
-           ///</summary>
-           [HttpGet]
-           [Route("{id:int}/update")]
-           [ResponseType(typeof (void))]
-             public IHttpActionResult EditProduct(int id)
-             {
-                 if (id != product.ProductId)
-                 {
-                     return BadRequest();
-                 }
-                 return;
-             } */
-
         // PUT: api/ProductApi/5
         ///<summary>
         ///UPDATE Product by ID
         ///</summary>
-        [Route("{id:int}/update")]
+        [Route("{id:int}/Update")]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProduct(int id, Product product)
         {
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -115,6 +102,7 @@ namespace MyFollow.Controllers
                 return BadRequest();
             }
 
+            product.UserId = currentUser.Id;
             db.Entry(product).State = EntityState.Modified;
 
             try
@@ -133,6 +121,7 @@ namespace MyFollow.Controllers
                 }
             }
 
+            
             return StatusCode(HttpStatusCode.NoContent);
         }
 
@@ -154,7 +143,7 @@ namespace MyFollow.Controllers
             db.Products.Add(product);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new {controller= "ProductApi" , id = product.ProductId }, new Product{ProductId = product.ProductId, ProductName = product.ProductName, ProductDetails = product.ProductDetails, ProductPrice = product.ProductPrice});
+            return CreatedAtRoute("DefaultApi", new { controller = "ProductApi", id = product.ProductId }, new Product { ProductId = product.ProductId, ProductName = product.ProductName, ProductDetails = product.ProductDetails, ProductPrice = product.ProductPrice });
         }
         
         // DELETE: api/ProductApi/5
@@ -162,8 +151,10 @@ namespace MyFollow.Controllers
         ///Delete Product by ID
         ///</summary>
         [ResponseType(typeof(Product))]
+        [Route("{id:int}/Delete")]
         public IHttpActionResult DeleteProduct(int id)
         {
+
             Product product = db.Products.Find(id);
             if (product == null)
             {

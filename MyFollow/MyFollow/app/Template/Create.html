@@ -19,7 +19,7 @@
                         <label>Product Name</label>
                     </div>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" placeholder="Product Name" ng-model="Name" name="name" required />
+                        <input type="text" class="form-control" placeholder="Product Name" ng-model="productName" name="name" required />
                         <span style="color:red" ng-show="newProductForm.name.$dirty && newProductForm.name.$invalid">
                             <span ng-show="newProductForm.name.$error.required">Username is required.</span>
                         </span>
@@ -31,7 +31,7 @@
                         <label>Product Details</label>
                     </div>
                     <div class="col-md-10">
-                        <textarea name="details" type="text" class="form-control" placeholder="Product Details" ng-model="Details" required></textarea>
+                        <textarea name="details" type="text" class="form-control" placeholder="Product Details" ng-model="productDetails" required></textarea>
                         <span style="color:red" ng-show="newProductForm.details.$dirty && newProductForm.details.$invalid">
                             <span ng-show="newProductForm.details.$error.required">Product's detail is required.</span>
                         </span>
@@ -42,7 +42,7 @@
                         <label>Product Price</label>
                     </div>
                     <div class="col-md-10">
-                        <input name="price" type="text" class="form-control" placeholder="Product Price" ng-model="Price" ng-pattern="/^\d{0,9}(\.\d{1,9})?$/" required />
+                        <input name="price" type="text" class="form-control" placeholder="Product Price" ng-model="productPrice" ng-pattern="/^\d{0,9}(\.\d{1,9})?$/" required />
                         <span style="color:red" ng-show="newProductForm.price.$dirty && newProductForm.price.$invalid">
                             <span ng-show="newProductForm.price.$invalid">Price should be valid.</span>
                         </span>

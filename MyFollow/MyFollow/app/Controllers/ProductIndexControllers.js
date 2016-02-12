@@ -5,7 +5,7 @@
     //-------------------------------------------------------------------------------
     //getting values from db
 //----------------------------------------------------------------------------
-    $scope.getAdminProducts = function () {
+    $scope.getOwnerProducts = function () {
        $http.get('/api/ProductApi').
                 success(function (data, status, header, config) {
                $scope.products = data;

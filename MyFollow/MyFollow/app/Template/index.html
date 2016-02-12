@@ -1,4 +1,4 @@
-﻿<div class="container" ng-controller="productIndexController" ng-init="getAdminProducts()">
+﻿<div class="container" ng-controller="productIndexController" ng-init="getOwnerProducts()">
 
     <a href="#/Create" type="button" class="btn btn-primary create">Create Product {{5+5}}</a><hr />
     <div class="row">
@@ -17,19 +17,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="product in products">
-
+                <tr ng-repeat="product in products | orderBy:'productName'">
                     <td>{{product.productName}}</td>
-
                     <td>{{product.productDetails}}</td>
-
                     <td>{{product.productPrice}}</td>
-
                     <td>
-                        <a type="button" href="#/Update/?{{product.productId}}" class="btn btn-warning">Update</a>
-                        <input type="button" class="btn btn-info" value="Edit" ng-click="getDetailsProduct()" />
-                        <input type="button" class="btn btn-danger" value="Delete" ng-click="getDeleteProduct()" />
-                        <input type="button" class="btn btn-info" value="Follow" ng-click="FollowProduct()" />
+                        <a type="button" href="#/Update/{{product.productId}}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Update</a>
+                        <a type="button" href="#/Details/{{product.productId}}" class="btn btn-info"><span class="glyphicon glyphicon-info-sign"></span> Details</a>
+                        <a type="button" href="#/Delete/{{product.productId}}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                        <a type="button" href="#" class="btn btn-info"><span class="glyphicon glyphicon-thumbs-up"></span> Follow</a>
                     </td>
                 </tr>
             </tbody>
