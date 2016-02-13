@@ -114,6 +114,8 @@ namespace MyFollow.Models
         [Display(Name = "Facebook Page Url")]
         public string FacebookPageUrl { get; set; }
 
+
+
     }
 
     public class EndUser
