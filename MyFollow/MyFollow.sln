@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFollow.web", "MyFollow\MyFollow.web.csproj", "{07737277-2B30-4031-A23F-8B3EF80E9238}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFollow", "MyFollow\MyFollow.csproj", "{07737277-2B30-4031-A23F-8B3EF80E9238}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

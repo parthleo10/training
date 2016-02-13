@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace MyFollow.Models
 {
-    public class Followproduct
+    public class FollowProduct
     {
+        public int FollowId { get; set; }
+        public bool IsFollowed { get; set; }
 
-        public int FollowproductID { get; set; }
-        public int ProductID { get; set; }
-        public int StudentID { get; set; }
-        public bool Follows { get; set; }
+        public int UserId { get; set; }
 
+        [ForeignKey("UserId")]
+        public virtual ApplicationUser User { get; set; }
+
+        public int ProductId { get; set; }
+
+        [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
-        public virtual EndUser EndUsers { get; set; }
-
     }
 }
