@@ -14,7 +14,7 @@ namespace MyFollow.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-
+        
         public virtual Owner Owner { get; set; } //this creates foreign key set in user class
 
         public virtual EndUser EndUser { get; set; }
@@ -25,7 +25,6 @@ namespace MyFollow.Models
 
         public virtual ICollection<Product> Products { get; set; }
         
-
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -58,7 +57,7 @@ namespace MyFollow.Models
     public class Owner
     {
         
-        public int Id { get; set; }
+        public int OwnerId { get; set; }
 
         [Required]
         [Display(Name = "Owner Name")]
@@ -114,13 +113,14 @@ namespace MyFollow.Models
         [Display(Name = "Facebook Page Url")]
         public string FacebookPageUrl { get; set; }
 
-
+        public virtual ICollection<Product> Products { get; set; }
 
     }
 
     public class EndUser
     {
-        public int ID { get; set; }
+        
+        public int EndUserId { get; set; }
 
         [Required]
         [Display(Name = "User Name")]
@@ -161,8 +161,8 @@ namespace MyFollow.Models
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
         public string ContactNumber { get; set; }
 
-       
 
+        public virtual ICollection<FollowProduct> FollowProducts { get; set; }
 
     }
 

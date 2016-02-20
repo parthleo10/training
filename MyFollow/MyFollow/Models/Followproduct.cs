@@ -8,17 +8,18 @@ namespace MyFollow.Models
 {
     public class FollowProduct
     {
-        public int FollowId { get; set; }
+        public int FollowProductId { get; set; }
+
         public bool IsFollowed { get; set; }
-
-        public int UserId { get; set; }
-
-        [ForeignKey("UserId")]
-        public virtual ApplicationUser User { get; set; }
 
         public int ProductId { get; set; }
 
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
+
+        public int EndUserId { get; set; }
+
+        [ForeignKey("EndUserId")]
+        public virtual EndUser EndUser { get; set; }
     }
 }

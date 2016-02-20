@@ -9,6 +9,7 @@ namespace MyFollow.Models
 {
     public class Product
 {
+        [Key]
         public int ProductId { get; set; }
        
         public string ProductName { get; set; }
@@ -22,7 +23,10 @@ namespace MyFollow.Models
         [ForeignKey("UserId")]
         public virtual ApplicationUser User { get; set; }
 
+        public int OwnerId { get; set; }
 
+        [ForeignKey("OwnerId")]
+        public virtual Owner Owner { get; set; }
         
 }
 }

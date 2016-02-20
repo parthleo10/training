@@ -23,6 +23,8 @@ namespace MyFollow.DAL
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<FollowProduct> FollowProducts { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

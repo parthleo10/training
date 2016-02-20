@@ -236,33 +236,9 @@
     <Compile Include="Controllers\ProductApiController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DAL\IdentityDb.cs" />
-    <Compile Include="DAL\IdentityMigrations\201601040521146_InitialCreate.cs" />
-    <Compile Include="DAL\IdentityMigrations\201601040521146_InitialCreate.Designer.cs">
-      <DependentUpon>201601040521146_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\IdentityMigrations\201602010857274_product.cs" />
-    <Compile Include="DAL\IdentityMigrations\201602010857274_product.Designer.cs">
-      <DependentUpon>201602010857274_product.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\IdentityMigrations\201602011042015_product valildation.cs" />
-    <Compile Include="DAL\IdentityMigrations\201602011042015_product valildation.Designer.cs">
-      <DependentUpon>201602011042015_product valildation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\IdentityMigrations\201602011050462_product valildation 1.cs" />
-    <Compile Include="DAL\IdentityMigrations\201602011050462_product valildation 1.Designer.cs">
-      <DependentUpon>201602011050462_product valildation 1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\IdentityMigrations\201602011409502_product valildation 2.cs" />
-    <Compile Include="DAL\IdentityMigrations\201602011409502_product valildation 2.Designer.cs">
-      <DependentUpon>201602011409502_product valildation 2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\IdentityMigrations\201602020449248_owners product.cs" />
-    <Compile Include="DAL\IdentityMigrations\201602020449248_owners product.Designer.cs">
-      <DependentUpon>201602020449248_owners product.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\IdentityMigrations\201602030523165_multiple objects.cs" />
-    <Compile Include="DAL\IdentityMigrations\201602030523165_multiple objects.Designer.cs">
-      <DependentUpon>201602030523165_multiple objects.cs</DependentUpon>
+    <Compile Include="DAL\IdentityMigrations\201602150922418_navigation prop.cs" />
+    <Compile Include="DAL\IdentityMigrations\201602150922418_navigation prop.Designer.cs">
+      <DependentUpon>201602150922418_navigation prop.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\IdentityMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
@@ -1190,26 +1166,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201601040521146_InitialCreate.resx">
-      <DependentUpon>201601040521146_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201602010857274_product.resx">
-      <DependentUpon>201602010857274_product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201602011042015_product valildation.resx">
-      <DependentUpon>201602011042015_product valildation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201602011050462_product valildation 1.resx">
-      <DependentUpon>201602011050462_product valildation 1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201602011409502_product valildation 2.resx">
-      <DependentUpon>201602011409502_product valildation 2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201602020449248_owners product.resx">
-      <DependentUpon>201602020449248_owners product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DAL\IdentityMigrations\201602030523165_multiple objects.resx">
-      <DependentUpon>201602030523165_multiple objects.cs</DependentUpon>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201602150922418_navigation prop.resx">
+      <DependentUpon>201602150922418_navigation prop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
